@@ -20,7 +20,7 @@ import { fetchCounter } from '../common/api/counter'
 import { match, RouterContext } from 'react-router'
 import routes from '../client/routes'
 
-import models from '../models'
+import models from './models'
 
 const app = new Express()
 const port = 3000
@@ -55,7 +55,7 @@ function handleRequest(req, res) {
     <!doctype html>
     <html>
       <head>
-        <title>Ball</title>
+        <title>Тридевятое</title>
       </head>
       <body>
         <div id="app"></div>

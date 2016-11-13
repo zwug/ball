@@ -4,7 +4,6 @@ import routes from '../../client/routes'
 import { Router } from 'react-router'
 
 class Root extends Component {
-
 // const Root = ({ store, history }) => (
   getChildContext() {
     return {

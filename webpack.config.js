@@ -38,6 +38,14 @@ module.exports = {
           'postcss-loader?pack=default'
         ],
         include: __dirname
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
+        loader: 'url-loader',
+        query: {
+          name: '[hash].[ext]',
+          limit: 10000
+        }
       }
     ]
   },

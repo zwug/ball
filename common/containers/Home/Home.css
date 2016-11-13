@@ -1,0 +1,6 @@
+@import '../../components/variables.css';
+
+.container {
+  max-width: var(--screen-md-min);
+  margin: auto;
+}

@@ -1,3 +1,24 @@
-.header {
-  background: blue;
+@import '../variables.css';
+
+:root {
+  --border-type: 1px solid var(--border-color);
+  border-bottom: var(--border-type);
+  height: var(--header-height);
+}
+
+.items {
+  display: flex;
+}
+
+.link {
+  border-right: var(--border-type);
+  color: var(--main-font-color);
+  line-height: var(--header-height);
+  padding: 0 10px;
+  text-decoration: none;
+}
+
+.link:hover {
+  background-color: #000000;
+  color: #ffffff;
 }

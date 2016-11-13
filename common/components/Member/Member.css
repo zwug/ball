@@ -1,0 +1,35 @@
+.root {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.image {
+  --size: 300px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: flex;
+  flex-shrink: 0;
+}
+
+.description {
+  padding: 10px 30px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.text {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.description:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
