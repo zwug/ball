@@ -9,6 +9,7 @@ const Member = ({description, img, name, reverse}) => {
       <div className={s.description}>
         <h2>{name}</h2>
         <p className={s.text}>{description}</p>
+        <div className={s.swirl}></div>
       </div>
     </div>
   )

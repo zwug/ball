@@ -13,6 +13,15 @@
   flex-shrink: 0;
 }
 
+.swirl {
+  background-image: url('../../../static/img/swirl.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 70px;
+  width: 100%;
+}
+
 .description {
   padding: 10px 30px;
   display: flex;
