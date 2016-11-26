@@ -1,3 +1,5 @@
+@import '../variables.css';
+
 .root {
   margin-bottom: 15px;
   display: flex;
@@ -6,11 +8,12 @@
 
 .image {
   --size: 300px;
-  width: var(--size);
-  height: var(--size);
   border-radius: 50%;
   display: flex;
   flex-shrink: 0;
+  height: var(--size);
+  margin: auto;
+  width: var(--size);
 }
 
 .swirl {
@@ -18,7 +21,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 70px;
+  height: 90px;
   width: 100%;
 }
 
@@ -41,4 +44,20 @@
   content: " ";
   clear: both;
   height: 0;
+}
+
+@media (--sm-viewport) {
+  .root {
+    display: block;
+  }
+}
+
+@media (--xs-viewport) {
+  .image {
+    --size: 250px;
+  }
+
+  .description {
+    padding: 5px;
+  }
 }

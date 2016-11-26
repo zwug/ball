@@ -3,17 +3,17 @@
    * Media queries breakpoints
    * ======================================================================== */
 
-  --screen-xs-min: 480px;  /* Extra small screen / phone */
   @custom-media --xs-viewport (max-width: 480px);
-  --screen-sm-min: 768px;  /* Small screen / tablet */
-  --screen-md-min: 992px;  /* Medium screen / desktop */
-  --screen-lg-min: 1200px; /* Large screen / wide desktop */
+  @custom-media --sm-viewport (max-width: 768px);
+  @custom-media --md-viewport (max-width: 992px);
+  @custom-media --lg-viewport (max-width: 1200px);
 
   /*
    * Sizes
    * ======================================================================== */
 
   --header-height: 50px;
+  --container-width: 992px;
 
   /*
    * Colors
