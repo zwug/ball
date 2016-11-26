@@ -1,6 +1,4 @@
-@import '../variables.css';
-
-:root {
+.root {
   --border-type: 1px solid var(--border-color);
   border-bottom: var(--border-type);
   height: var(--header-height);

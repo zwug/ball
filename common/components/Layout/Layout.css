@@ -1,8 +1,16 @@
 @import '../../../node_modules/normalize.css/normalize.css';
+@import '../variables.css';
 
 :root {
   --main-bg-color: #272B30;
   --main-font-color: #c8c8c8;
   background-color: var(--main-bg-color);
   color: var(--main-font-color);
+}
+
+@media (--xs-viewport) {
+  body {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }

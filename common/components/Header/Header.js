@@ -5,7 +5,7 @@ import s from './Header.css';
 
 const Header = ({}) => {
   return (
-    <header className={s.header}>
+    <header className={s.root}>
       <div className={s.items}>
         <Link className={s.link} to='/'>Главная</Link>
         <Link className={s.link} to='/about'>О нас</Link>

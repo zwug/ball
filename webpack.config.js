@@ -50,16 +50,13 @@ module.exports = {
     ]
   },
   // The list of plugins for PostCSS
-  // https://github.com/postcss/postcss
   postcss(bundler) {
     return {
       default: [
-        // Postcss flexbox bug fixer
-        // https://github.com/luisrudge/postcss-flexbugs-fixes
+        require('postcss-import')(),
         require('postcss-flexbugs-fixes')(),
-        // Add vendor prefixes to CSS rules using values from caniuse.com
-        // https://github.com/postcss/autoprefixer
         require('autoprefixer')(),
+        require('postcss-custom-media')()
       ]
     };
   }
