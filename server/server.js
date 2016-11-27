@@ -11,13 +11,14 @@ import routes from './routes'
 import models from './models'
 
 const app = new Express()
-const port = 3000
+let port = 3000
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // Use this middleware to set up hot module reloading via webpack.
 if (process.env.NODE_ENV === 'production') {
+  port = 80
   webpack(webpackConfig).run((err, stats) => {
     if (err) {
       console.log(err)
@@ -45,7 +46,7 @@ models.sequelize.sync().then(() => {
     if (error) {
       console.error(error)
     } else {
-      console.info(`==> 🌎  Listening on port ${port}. Open up http://localhost:${port}/ in your browser.`)
+      console.info(`==> 🌎  Listening on port ${port}.`)
     }
   })
 })
