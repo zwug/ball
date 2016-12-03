@@ -37,6 +37,7 @@ if (process.env.NODE_ENV === 'production') {
 routes(app)
 
 app.use('/dist', Express.static(path.join(__dirname, '../dist')))
+app.use('/static', Express.static(path.join(__dirname, '../static')))
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/index.html'))
 })
