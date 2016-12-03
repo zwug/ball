@@ -3,5 +3,38 @@
 .container {
   margin: auto;
   max-width: var(--container-width);
-  padding: 0 10px;
+  padding: 30px 10px;
+}
+
+.videoContainer {
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.headingContainer {
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+}
+
+.heading {
+  padding: 20px;
+}
+
+.logo {
+  background-image: url("../../../static/img/logo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 300px;
+  margin: auto;
+}
+
+.video {
+  width: 100%;
 }
