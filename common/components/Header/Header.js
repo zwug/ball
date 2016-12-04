@@ -4,7 +4,6 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Header.css';
 
 const Header = ({opaque}) => {
-  console.log(opaque);
   const headerClasses = [
     s.root,
     opaque ? s.opaque : ''
