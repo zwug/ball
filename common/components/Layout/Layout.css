@@ -7,10 +7,3 @@
   background-color: var(--main-bg-color);
   color: var(--main-font-color);
 }
-
-@media (--xs-viewport) {
-  body {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}

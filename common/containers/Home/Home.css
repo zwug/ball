@@ -7,7 +7,7 @@
 }
 
 .videoContainer {
-  height: 500px;
+  height: 350px;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -23,7 +23,8 @@
 }
 
 .heading {
-  padding: 20px;
+  font-size: 48px;
+  padding: 80px 10px 0;
 }
 
 .logo {
@@ -36,5 +37,21 @@
 }
 
 .video {
+  margin-top: -70px;
   width: 100%;
+}
+
+@media (--xs-viewport) {
+  .video {
+    margin-top: 0px;
+  }
+
+  .heading {
+    font-size: 24px;
+    padding-top: 40px;
+  }
+
+  .videoContainer {
+    height: 160px;
+  }
 }

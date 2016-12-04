@@ -49,9 +49,10 @@ module.exports = {
     return {
       default: [
         require('postcss-import')(),
-        require('postcss-flexbugs-fixes')(),
         require('autoprefixer')(),
-        require('postcss-custom-media')()
+        require('postcss-custom-media')(),
+        require('postcss-flexbugs-fixes')(),
+        require('postcss-nesting')()
       ]
     };
   }

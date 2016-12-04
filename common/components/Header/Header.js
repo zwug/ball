@@ -3,9 +3,14 @@ import { Link } from 'react-router';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Header.css';
 
-const Header = ({}) => {
+const Header = ({opaque}) => {
+  console.log(opaque);
+  const headerClasses = [
+    s.root,
+    opaque ? s.opaque : ''
+  ];
   return (
-    <header className={s.root}>
+    <header className={headerClasses.join(' ')}>
       <div className={s.items}>
         <Link className={s.link} to='/'>Главная</Link>
         <Link className={s.link} to='/about'>О нас</Link>

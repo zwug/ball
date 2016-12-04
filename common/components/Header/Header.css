@@ -4,6 +4,20 @@
   height: var(--header-height);
 }
 
+.opaque {
+  border-color: transparent;
+  position: absolute;
+  z-index: 1;
+
+  & .link {
+    border-color: transparent;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
 .items {
   display: flex;
 }
@@ -14,9 +28,9 @@
   line-height: var(--header-height);
   padding: 0 10px;
   text-decoration: none;
-}
 
-.link:hover {
-  background-color: #000000;
-  color: #ffffff;
+  &:hover {
+    background-color: #000000;
+    color: #ffffff;
+  }
 }

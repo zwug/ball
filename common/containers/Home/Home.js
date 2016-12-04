@@ -6,8 +6,8 @@ import Header from '../../components/Header/Header'
 function Home({ errorMessage, children }) {
   return (
     <div>
-      <Header/>
       <div className={s.videoContainer}>
+        <Header opaque />
         <video className={s.video}
           src="static/video/promo.mp4"
           autoPlay
