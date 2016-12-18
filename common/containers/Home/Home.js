@@ -1,9 +1,13 @@
 import React, { PropTypes } from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 import withStyles from 'isomorphic-style-loader/lib/withStyles'
 import s from './Home.css'
 import Header from '../../components/Header/Header'
+import RegisterForm from '../../components/RegisterForm/RegisterForm'
+import * as userActions from '../../actions/user'
 
-function Home({ errorMessage, children }) {
+function Home({ errorMessage, children, userActions}) {
   return (
     <div>
       <div className={s.videoContainer}>
@@ -22,6 +26,7 @@ function Home({ errorMessage, children }) {
         <div className={s.logo}></div>
         <p>Мы - творческое объединение людей, знающих своё дело.
            Организовываем сказочные балы любого формата.</p>
+        <RegisterForm onSubmit={userActions.register}/>
       </div>
     </div>
   );
@@ -29,6 +34,13 @@ function Home({ errorMessage, children }) {
 
 Home.propTypes = {
   children: PropTypes.element
+  //@TODO add
 };
 
-export default withStyles(s)(Home)
+function mapDispatchToProps(dispatch) {
+  return {
+    userActions: bindActionCreators(userActions, dispatch)
+  }
+}
+
+export default connect(null, mapDispatchToProps)(withStyles(s)(Home))

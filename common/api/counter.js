@@ -13,8 +13,8 @@ export const fetchCounter = (callback) => {
   // API.getUser().then(user => callback(user))
 }
 
-export const getHundred = () => {
-  console.log('100 is geting')
+export const registerUser = (data) => {
+  console.log(data);
   return fetch('/register', {
     method: 'POST',
     headers: {
@@ -22,9 +22,9 @@ export const getHundred = () => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      name: 'Vasilisa',
-      login: 'hubot'
+      firstname: data.firstname,
+      lastname: data.lastname,
+      email: data.email
     })
   })
-  return fetch('https://jsonplaceholder.typicode.com/photos')
 }

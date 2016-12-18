@@ -32,6 +32,7 @@
     "react-router": "^2.8.1",
     "react-router-redux": "^4.0.5",
     "redux": "^3.2.1",
+    "redux-form": "^6.3.2",
     "redux-thunk": "^2.1.0",
     "sequelize": "^3.24.5",
     "sequelize-cli": "^2.4.0",
