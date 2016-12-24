@@ -2,7 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  devtool: 'inline-source-map',
+  devtool: 'cheap-source-map',
   entry: [
     './client/index.js'
   ],
@@ -12,7 +12,11 @@ module.exports = {
     publicPath: '/dist/'
   },
   plugins: [
-    new webpack.optimize.OccurrenceOrderPlugin()
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+    })
   ],
   module: {
     loaders: [

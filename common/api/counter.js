@@ -14,7 +14,6 @@ export const fetchCounter = (callback) => {
 }
 
 export const registerUser = (data) => {
-  console.log(data);
   return fetch('/register', {
     method: 'POST',
     headers: {
