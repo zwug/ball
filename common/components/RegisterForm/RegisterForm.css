@@ -1,8 +1,9 @@
 .button {
   background: var(--brand-primary-color);
   border-radius: 2px;
-  border: 1px solid black;
+  border: none;
   color: #000;
+  cursor: pointer;
   font-weight: bold;
   margin-right: 15px;
   padding: 10px;

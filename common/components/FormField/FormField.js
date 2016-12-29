@@ -13,7 +13,12 @@ const FormField = ({ input, label, type, meta: { touched, error, warning } }) =>
 )
 
 FormField.propTypes = {
-  //
+  error: PropTypes.string,
+  input: PropTypes.object,
+  label: PropTypes.string,
+  touched: PropTypes.bool,
+  type: PropTypes.string,
+  warning: PropTypes.string
 };
 
 export default withStyles(s)(FormField)

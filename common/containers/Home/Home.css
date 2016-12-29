@@ -7,7 +7,7 @@
 }
 
 .videoContainer {
-  height: 350px;
+  height: 450px;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -37,7 +37,7 @@
 }
 
 .video {
-  margin-top: -70px;
+  margin-top: -30px;
   width: 100%;
 }
 
