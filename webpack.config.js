@@ -1,6 +1,17 @@
 var path = require('path')
 var webpack = require('webpack')
 
+var plugins = [
+  new webpack.optimize.OccurrenceOrderPlugin(),
+  new webpack.DefinePlugin({
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+  })
+];
+
+if (process.env.NODE_ENV === 'production') {
+  plugins.push(new webpack.optimize.UglifyJsPlugin());
+}
+
 module.exports = {
   devtool: 'cheap-source-map',
   entry: [
@@ -11,13 +22,7 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/dist/'
   },
-  plugins: [
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
-    })
-  ],
+  plugins: plugins,
   module: {
     loaders: [
       {
