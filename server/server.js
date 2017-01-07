@@ -11,14 +11,13 @@ import routes from './routes'
 import models from './models'
 
 const app = new Express()
-let port = 3000
+const port = 3000
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // Use this middleware to set up hot module reloading via webpack.
 if (process.env.NODE_ENV === 'production') {
-  port = 80
   webpack(webpackConfig).run((err, stats) => {
     if (err) {
       console.log(err)
