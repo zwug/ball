@@ -24,14 +24,12 @@ class Register extends Component {
 }
 
 const mapStateToProps = (state) => {
-  //console.log('mapStateToProps', state);
   return {
     counter: state.counter
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  //console.log('mapDispatchToProps', dispatch, bindActionCreators(CounterActions, dispatch), CounterActions);
   return {
     counterActions: bindActionCreators(CounterActions, dispatch)
   }
