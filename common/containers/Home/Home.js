@@ -20,7 +20,7 @@ class Home extends Component {
   renderForm() {
     if (this.props.user.registerSuccess) {
       return (
-        <h2>Вы успешно зарегистрировались!</h2>
+        <h3>Вы успешно зарегистрировались!</h3>
       )
     }
     return <RegisterForm onSubmit={this.props.userActions.register} />
