@@ -44,7 +44,7 @@ module.exports = {
         include: __dirname
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
+        test: /\.(png|jpg|jpeg|gif|svg|woff|eot|ttf|woff2)$/,
         loader: 'url-loader',
         query: {
           name: '[hash].[ext]',

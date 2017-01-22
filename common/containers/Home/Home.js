@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import withStyles from 'isomorphic-style-loader/lib/withStyles'
 import s from './Home.css'
 import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
 import RegisterForm from '../../components/RegisterForm/RegisterForm'
 import * as userActions from '../../actions/user'
 
@@ -50,6 +51,7 @@ class Home extends Component {
              Организовываем сказочные балы любого формата.</p>
           {this.renderForm()}
         </div>
+        <Footer />
       </div>
     )
   }

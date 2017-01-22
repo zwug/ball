@@ -21,4 +21,5 @@
 
   --border-color: #1c1e22;
   --brand-primary-color: #E4E654;
+  --link-color: var(--brand-primary-color)
 }

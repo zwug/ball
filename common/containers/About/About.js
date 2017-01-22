@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import withStyles from 'isomorphic-style-loader/lib/withStyles'
 import s from './About.css'
 import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
 import members from './members'
 import Member from '../../components/Member/Member'
 
@@ -16,6 +17,7 @@ const About = ({}) => {
           return <Member key={key} reverse={reverse} {...member}/>
         })}
       </div>
+      <Footer />
     </div>
   );
 }
