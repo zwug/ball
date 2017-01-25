@@ -15,6 +15,7 @@
 
 .headingContainer {
   background: rgba(0, 0, 0, 0.6);
+  font-family: Tridevyatoe;
   height: 100%;
   position: absolute;
   text-align: center;
@@ -24,7 +25,7 @@
 
 .heading {
   font-size: 48px;
-  padding: 80px 10px 0;
+  padding: 80px 50px 0;
 }
 
 .logo {
@@ -41,10 +42,17 @@
   width: 100%;
 }
 
+@media (--sm-viewport) {
+  .heading {
+    font-size: 32px;
+    padding: 50px 10px 0;
+  }
+}
+
 @media (--xs-viewport) {
   .heading {
     font-size: 24px;
-    padding-top: 40px;
+    padding: 40px 10px 0;
   }
 
   .videoContainer {

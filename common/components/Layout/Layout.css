@@ -1,5 +1,6 @@
 @import '../../../node_modules/normalize.css/normalize.css';
 @import '../variables.css';
+@import '../../components/font.css';
 
 :root {
   --main-bg-color: #272B30;

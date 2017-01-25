@@ -6,6 +6,12 @@
   justify-content: space-between;
 }
 
+.heading {
+  font-family: Tridevyatoe;
+  font-size: 48px;
+  margin: 0;
+}
+
 .image {
   --size: 300px;
   border-radius: 50%;
@@ -50,9 +56,17 @@
   .root {
     display: block;
   }
+
+  .heading {
+    text-align: center;
+  }
 }
 
 @media (--xs-viewport) {
+  .heading {
+    font-size: 32px;
+  }
+
   .image {
     --size: 250px;
   }
