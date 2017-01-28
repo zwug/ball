@@ -21,7 +21,6 @@ const validate = values => {
 }
 
 const RegisterForm = (props) => {
-  console.log(props);
   const { handleSubmit, pristine, reset, submitting } = props
   return (
     <form onSubmit={handleSubmit} noValidate >

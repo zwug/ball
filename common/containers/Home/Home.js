@@ -6,6 +6,7 @@ import s from './Home.css'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
 import RegisterForm from '../../components/RegisterForm/RegisterForm'
+import Panels from '../../components/Panels/Panels'
 import * as userActions from '../../actions/user'
 
 const isMobile = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
@@ -19,9 +20,7 @@ class Home extends Component {
 
   renderForm() {
     if (this.props.user.registerSuccess) {
-      return (
-        <h3>Вы успешно зарегистрировались!</h3>
-      )
+      return (<h3>Вы успешно зарегистрировались!</h3>)
     }
     return <RegisterForm onSubmit={this.props.userActions.register} />
   }
@@ -46,6 +45,7 @@ class Home extends Component {
           </div>
         </div>
         <div className={s.container}>
+          <Panels />
           <div className={s.logo}></div>
           <p>Мы - творческое объединение людей, знающих своё дело.
              Организовываем сказочные балы любого формата.</p>
