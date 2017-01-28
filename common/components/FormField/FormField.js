@@ -15,16 +15,17 @@ class FormField extends Component {
   }
 
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       date: null
-    };
+    }
   }
 
   renderInput({ input, label, type }) {
     if (type === 'date') {
       return (
         <DatePicker
+          {...input}
           locale="ru-ru"
           selected={this.state.date}
           onChange={this.onDateChange.bind(this)}
@@ -35,10 +36,13 @@ class FormField extends Component {
     return (<input className={s.input} {...input} placeholder={label} type={type}/>)
   }
 
-  onDateChange(date) {
+  onDateChange(date, evt) {
     this.setState({
       date
-    });
+    })
+    if (this.props.input && this.props.input.onChange) {
+      this.props.input.onChange();
+    }
   }
 
   render() {

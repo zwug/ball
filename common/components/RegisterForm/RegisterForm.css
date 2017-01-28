@@ -9,3 +9,12 @@
   margin-right: 15px;
   padding: 15px;
 }
+
+.label {
+  display: block;
+  padding: 5px 0;
+}
+
+.radio {
+  width: 18px;
+}

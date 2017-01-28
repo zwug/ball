@@ -5,16 +5,23 @@ import FormField from '../FormField/FormField'
 import s from './RegisterForm.css'
 
 const validate = values => {
+  const requiredFields = [
+    'name',
+    'date',
+    'email',
+    'number',
+    'vk'
+  ];
   const errors = {}
-  if (!values.firstname) {
-    errors.firstname = 'Поле обязательно'
-  }
-  if (!values.lastname) {
-    errors.lastname = 'Поле обязательно'
-  }
-  if (!values.email) {
-    errors.email = 'Поле обязательно'
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+
+  requiredFields.forEach((fieldName) => {
+    if (!values[fieldName]) {
+      errors[fieldName] = 'Поле обязательно'
+    }
+  })
+
+  var emailRegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+  if (!errors.email && !emailRegExp.test(values.email)) {
     errors.email = 'Неправильный формат почты'
   }
   return errors
@@ -22,12 +29,22 @@ const validate = values => {
 
 const RegisterForm = (props) => {
   const { handleSubmit, pristine, reset, submitting } = props
+  const skillLevels = ['Новичек', 'Любитель', 'Профи'];
   return (
     <form onSubmit={handleSubmit} noValidate >
-      <Field name="firstname" type="text" component={FormField} label="Имя"/>
-      <Field name="lastname" type="text" component={FormField} label="Фамилия"/>
-      <Field name="email" type="email" component={FormField} label="Email"/>
+      <Field name="name" type="text" component={FormField} label="ФИО"/>
       <Field name="date" type="date" component={FormField} label="Дата рождения"/>
+      <Field name="number" type="number" component={FormField} label="Телефон"/>
+      <Field name="email" type="email" component={FormField} label="Email"/>
+      <Field name="vk" component={FormField} label="Ссылка на профиль вконтакте (для добавления в группу)"/>
+      <div>Уровень танцевальной подготовки</div>
+      {skillLevels.map((level, index) => (
+        <label className={s.label} key={index}>
+          <Field className={s.radio} name="level" component="input" type="radio" value={`${index}`}>
+          </Field>
+          {level}
+        </label>
+      ))}
       <div>
         <button className={s.button} type="submit" disabled={submitting}>Зарегистрироваться!</button>
       </div>
