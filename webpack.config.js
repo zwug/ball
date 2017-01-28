@@ -33,6 +33,7 @@ module.exports = {
       },
       {
         test: /\.css/,
+        exclude: /node_modules/,
         loaders: [
           'isomorphic-style-loader',
           `css-loader?${JSON.stringify({
@@ -40,8 +41,7 @@ module.exports = {
             modules: true
           })}`,
           'postcss-loader?pack=default'
-        ],
-        include: __dirname
+        ]
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|eot|ttf|woff2)$/,

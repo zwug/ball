@@ -27,9 +27,9 @@ const RegisterForm = (props) => {
       <Field name="firstname" type="text" component={FormField} label="Имя"/>
       <Field name="lastname" type="text" component={FormField} label="Фамилия"/>
       <Field name="email" type="email" component={FormField} label="Email"/>
+      <Field name="date" type="date" component={FormField} label="Дата рождения"/>
       <div>
         <button className={s.button} type="submit" disabled={submitting}>Зарегистрироваться!</button>
-        <button className={s.button} type="button" disabled={pristine || submitting} onClick={reset}>Очистить</button>
       </div>
     </form>
   )
