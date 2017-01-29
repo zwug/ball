@@ -10,11 +10,25 @@
   padding: 15px;
 }
 
-.label {
-  display: block;
-  padding: 5px 0;
+.inputHeading {
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
 
-.radio {
+.label, .choiseLabel {
+  padding: 5px 0;
+  text-transform: capitalize;
+}
+
+.label {
+  display: block;
+}
+
+.choiseLabel {
+  display: inline-block;
+  padding-right: 15px;
+}
+
+.checkInput {
   width: 18px;
 }
