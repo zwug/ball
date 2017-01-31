@@ -22,3 +22,11 @@ export const register = (data) => (dispatch) => {
     dispatch(registerSuccess())
   })
 }
+
+export const registerGuest = (data) => (dispatch) => {
+  dispatch(registerPending())
+  registerGuest(data)
+  .then((response) => {
+    dispatch(registerSuccess())
+  })
+}

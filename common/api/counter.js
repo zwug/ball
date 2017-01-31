@@ -27,3 +27,18 @@ export const registerUser = (data) => {
     })
   })
 }
+
+export const registerGuest = (data) => {
+  return fetch('/register', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      firstname: data.firstname,
+      lastname: data.lastname,
+      email: data.email
+    })
+  })
+}

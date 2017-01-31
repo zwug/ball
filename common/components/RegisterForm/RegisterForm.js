@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import withStyles from 'isomorphic-style-loader/lib/withStyles'
-import { Field, reduxForm } from 'redux-form'
+import { connect } from 'react-redux'
+import { Field, reduxForm, formValueSelector } from 'redux-form'
 import FormField from '../FormField/FormField'
 import s from './RegisterForm.css'
 
@@ -32,7 +33,6 @@ class RegisterForm extends Component {
       }
       return balls
     }, [])
-    console.log(values)
     this.props.onSubmit(values)
   }
 
@@ -53,7 +53,7 @@ class RegisterForm extends Component {
             {level}
           </label>
         ))}
-        <div className={s.inputHeading}>Если вы были на балах МИРЭА, отметьте на каких</div>
+        <div className={s.inputHeading}>Если Вы были на балах МИРЭА, отметьте на каких</div>
         {this.balls.map((ball, index) => (
           <label className={s.label} key={index}>
             <Field
@@ -68,11 +68,13 @@ class RegisterForm extends Component {
         <div className={s.inputHeading}>Есть ли у Вас пара на бал?</div>
         {this.booleanChoises.map((choice, index) => (
           <label className={s.choiseLabel} key={index}>
-            <Field className={s.checkInput} name="has-partner" component="input" type="radio" value={`${index === 0}`}>
+            <Field className={s.checkInput} name="hasPartner" component="input" type="radio" value={`${index === 0}`}>
             </Field>
             {choice}
           </label>
         ))}
+        {this.props.hasPartner === 'true' &&
+          <Field name="partner" type="partner" component={FormField} label="ФИО партнера"/>}
         <div className={s.inputHeading}>Хотите ли Вы быть дебютантом бала?</div>
         {this.booleanChoises.map((choice, index) => (
           <label className={s.choiseLabel} key={index}>
@@ -105,6 +107,10 @@ const validate = values => {
     }
   })
 
+  if (values.hasPartner === 'true' && !values.partner) {
+    errors.partner = 'Поле обязательно'
+  }
+
   var emailRegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
   if (!errors.email && !emailRegExp.test(values.email)) {
     errors.email = 'Неправильный формат почты'
@@ -116,5 +122,15 @@ RegisterForm = reduxForm({
   form: 'RegisterForm',
   validate
 })(RegisterForm)
+
+const selector = formValueSelector('RegisterForm')
+RegisterForm = connect(
+  state => {
+    const hasPartner = selector(state, 'hasPartner')
+    return {
+      hasPartner
+    }
+  }
+)(RegisterForm)
 
 export default withStyles(s)(RegisterForm)

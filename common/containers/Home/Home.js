@@ -6,6 +6,7 @@ import s from './Home.css'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
 import RegisterForm from '../../components/RegisterForm/RegisterForm'
+import RegisterGuestForm from '../../components/RegisterGuestForm/RegisterGuestForm'
 import Panels from '../../components/Panels/Panels'
 import * as userActions from '../../actions/user'
 
@@ -18,11 +19,50 @@ class Home extends Component {
     userActions: PropTypes.object
   }
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      activeForm: null
+    }
+  }
+
+  onMemeberClick() {
+    this.setState({
+      activeForm: 'member'
+    })
+  }
+
+  onGuestClick() {
+    this.setState({
+      activeForm: 'guest'
+    })
+  }
+
+  renderFormSelect() {
+    if (this.state.activeForm === null) {
+      return (
+        <div className={s.formSelect}>
+          <button className={s.button} onClick={this.onMemeberClick.bind(this)}>
+            Хочу стать участником!
+          </button>
+          <button className={s.button} onClick={this.onGuestClick.bind(this)}>
+            Хочу стать гостем!
+          </button>
+        </div>
+      )
+    }
+    return null
+  }
+
   renderForm() {
     if (this.props.user.registerSuccess) {
       return (<h3>Вы успешно зарегистрировались!</h3>)
+    } else if (this.state.activeForm === 'member') {
+      return <RegisterForm onSubmit={this.props.userActions.register} />
+    } else if (this.state.activeForm === 'guest') {
+      return <RegisterGuestForm onSubmit={this.props.userActions.registerGuest} />
     }
-    return <RegisterForm onSubmit={this.props.userActions.register} />
+    return null
   }
 
   render() {
@@ -49,6 +89,7 @@ class Home extends Component {
           <div className={s.logo}></div>
           <p>Мы - творческое объединение людей, знающих своё дело.
              Организовываем сказочные балы любого формата.</p>
+          {this.renderFormSelect()}
           {this.renderForm()}
         </div>
         <Footer />
