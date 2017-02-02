@@ -75,4 +75,12 @@
   .videoContainer {
     height: 160px;
   }
+
+  .formSelect {
+    flex-direction: column;
+  }
+
+  .button {
+    margin-top: 15px;
+  }
 }

@@ -1,3 +1,5 @@
+@import '../variables.css';
+
 .button {
   background: var(--main-bg-color);
   border-radius: 4px;
@@ -13,7 +15,7 @@
 }
 
 .inputHeading {
-  padding-top: 10px;
+  padding-top: 15px;
   padding-bottom: 5px;
 }
 
@@ -26,11 +28,6 @@
   display: block;
 }
 
-.choiseLabel {
-  display: inline-block;
-  padding-right: 15px;
-}
-
 .checkInput {
   width: 18px;
 }
@@ -39,4 +36,11 @@
   height: 30px;
   margin-left: 10px;
   width: 40px;
+}
+
+@media (--xs-viewport) {
+  .button {
+    font-size: 18px;
+    padding: 15px;
+  }
 }

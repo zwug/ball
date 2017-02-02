@@ -29,11 +29,27 @@ class FormField extends Component {
           locale="ru-ru"
           selected={this.state.date}
           onChange={this.onDateChange.bind(this)}
+          showYearDropdown
+          showMonthDropdown
+          scrollableYearDropdown
           className={s.input}
         />
       )
+    } else if (type === 'boolean') {
+      return  (
+        <div>
+          <label className={s.choiseLabel}>
+            <input {...input} className={s.checkInput} type="radio" value="false" />
+            Нет
+          </label>
+          <label className={s.choiseLabel}>
+            <input {...input} className={s.checkInput} type="radio" value="true" />
+            Да
+          </label>
+        </div>
+      )
     }
-    return (<input className={s.input} {...input} placeholder={label} type={type}/>)
+    return (<input className={s.input} {...input} type={type}/>)
   }
 
   onDateChange(date, evt) {
@@ -50,10 +66,10 @@ class FormField extends Component {
         meta: { touched, error, warning } } = this.props;
     return (
       <div>
-        <label>{label}</label>
+        <label className={s.label}>{label}&nbsp;</label>
+        {touched && ((error && <span className={s.error}>{error}</span>) || (warning && <span>{warning}</span>))}
         <div>
           {this.renderInput(this.props)}
-          {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
         </div>
       </div>
     )

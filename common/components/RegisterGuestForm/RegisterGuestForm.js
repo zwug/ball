@@ -13,7 +13,7 @@ class RegisterFormGuest extends Component {
     const maxTickets = 10
     var ticketOptions = []
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i <= 10; i++) {
       ticketOptions.push(<option key={i} value={i}>{i}</option>)
     }
     return ticketOptions
@@ -24,7 +24,7 @@ class RegisterFormGuest extends Component {
     return (
       <form onSubmit={handleSubmit} noValidate >
         <Field name="name" type="text" component={FormField} label="ФИО"/>
-        <Field name="number" type="number" component={FormField} label="Телефон"/>
+        <Field name="number" component={FormField} label="Телефон"/>
         <Field name="email" type="email" component={FormField} label="Email"/>
         <label className={s.choiseLabel}>
           Количество билетов

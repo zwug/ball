@@ -42,7 +42,7 @@ class RegisterForm extends Component {
       <form onSubmit={handleSubmit(this.handleSubmit)} noValidate >
         <Field name="name" type="text" component={FormField} label="ФИО"/>
         <Field name="date" type="date" component={FormField} label="Дата рождения"/>
-        <Field name="number" type="number" component={FormField} label="Телефон"/>
+        <Field name="number" component={FormField} label="Телефон"/>
         <Field name="email" type="email" component={FormField} label="Email"/>
         <Field name="vk" component={FormField} label="Ссылка на профиль вконтакте (для добавления в группу)"/>
         <div className={s.inputHeading}>Уровень танцевальной подготовки</div>
@@ -65,24 +65,11 @@ class RegisterForm extends Component {
             {ball}
           </label>
         ))}
-        <div className={s.inputHeading}>Есть ли у Вас пара на бал?</div>
-        {this.booleanChoises.map((choice, index) => (
-          <label className={s.choiseLabel} key={index}>
-            <Field className={s.checkInput} name="hasPartner" component="input" type="radio" value={`${index === 0}`}>
-            </Field>
-            {choice}
-          </label>
-        ))}
+        <Field name="hasPartner" type="boolean" component={FormField} label="Есть ли у Вас пара на бал?"/>
         {this.props.hasPartner === 'true' &&
-          <Field name="partner" type="partner" component={FormField} label="ФИО партнера"/>}
-        <div className={s.inputHeading}>Хотите ли Вы быть дебютантом бала?</div>
-        {this.booleanChoises.map((choice, index) => (
-          <label className={s.choiseLabel} key={index}>
-            <Field className={s.checkInput} name="debut" component="input" type="radio" value={`${index === 0}`}>
-            </Field>
-            {choice}
-          </label>
-        ))}
+          <Field name="partner" component={FormField} label="ФИО партнера"/>}
+
+        <Field name="debut" type="boolean" component={FormField} label="Хотите ли Вы быть дебютантом бала?"/>
         <div>
           <button className={s.button} type="submit" disabled={submitting}>Зарегистрироваться!</button>
         </div>
@@ -97,7 +84,9 @@ const validate = values => {
     'date',
     'email',
     'number',
-    'vk'
+    'vk',
+    'debut',
+    'hasPartner'
   ]
   const errors = {}
 
