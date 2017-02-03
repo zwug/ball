@@ -27,7 +27,7 @@ class RegisterForm extends Component {
   }
 
   handleSubmit = (values) => {
-    values['ball'] = this.balls.reduce((balls, ball, index) => {
+    values['balls'] = this.balls.reduce((balls, ball, index) => {
       if (values[`ball-${index}`]) {
         balls.push(ball)
       }
@@ -42,7 +42,7 @@ class RegisterForm extends Component {
       <form onSubmit={handleSubmit(this.handleSubmit)} noValidate >
         <Field name="name" type="text" component={FormField} label="ФИО"/>
         <Field name="date" type="date" component={FormField} label="Дата рождения"/>
-        <Field name="number" component={FormField} label="Телефон"/>
+        <Field name="phone" component={FormField} label="Телефон"/>
         <Field name="email" type="email" component={FormField} label="Email"/>
         <Field name="vk" component={FormField} label="Ссылка на профиль вконтакте (для добавления в группу)"/>
         <div className={s.inputHeading}>Уровень танцевальной подготовки</div>
@@ -83,7 +83,7 @@ const validate = values => {
     'name',
     'date',
     'email',
-    'number',
+    'phone',
     'vk',
     'debut',
     'hasPartner'

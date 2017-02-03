@@ -1,4 +1,4 @@
-import { getHundred as get100 } from '../api/counter';
+import { getHundred as get100 } from '../api/user';
 
 export const SET_COUNTER = 'SET_COUNTER'
 export const INCREMENT_COUNTER = 'INCREMENT_COUNTER'

@@ -1,4 +1,4 @@
-import { registerUser } from '../api/counter';
+import { registerUser } from '../api/user';
 
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
 export const REGISTER_PENDING = 'REGISTER_PENDING'
