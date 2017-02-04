@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define('User', {
+  var User = sequelize.define('user', {
     'fio': {
       allowNull: false,
       type: DataTypes.STRING
@@ -28,6 +28,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.BOOLEAN
     },
     'partner': DataTypes.STRING,
+    'sex': {
+      allowNull: false,
+      type: DataTypes.ENUM('male', 'female')
+    },
     'level': {
       allowNull: false,
       type: DataTypes.INTEGER
