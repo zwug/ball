@@ -21,7 +21,7 @@ class FormField extends Component {
     }
   }
 
-  renderInput({ input, label, type }) {
+  renderInput({ input, label, type, inputLabels, inputValues }) {
     if (type === 'date') {
       return (
         <DatePicker
@@ -36,16 +36,16 @@ class FormField extends Component {
         />
       )
     } else if (type === 'boolean') {
+      const labels = inputLabels || ['Нет', 'Да'];
+      const values = inputValues || ['false', 'true'];
       return  (
         <div>
-          <label className={s.choiseLabel}>
-            <input {...input} className={s.checkInput} type="radio" value="false" />
-            Нет
-          </label>
-          <label className={s.choiseLabel}>
-            <input {...input} className={s.checkInput} type="radio" value="true" />
-            Да
-          </label>
+          {labels.map((label, index) => (
+            <label className={s.choiseLabel} key={index}>
+              <input {...input} className={s.checkInput} type="radio" value={values[index]} />
+              {label}
+            </label>
+          ))}
         </div>
       )
     }
@@ -62,7 +62,7 @@ class FormField extends Component {
   }
 
   render() {
-    const { children, input, label, type,
+    const { children, input, label, type, inputLabels, inputValues,
         meta: { touched, error, warning } } = this.props;
     return (
       <div>

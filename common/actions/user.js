@@ -1,4 +1,4 @@
-import { registerUser } from '../api/user';
+import { registerUser as saveUser, registerGuest as saveGuest } from '../api/user';
 
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
 export const REGISTER_PENDING = 'REGISTER_PENDING'
@@ -17,7 +17,7 @@ function registerSuccess() {
 
 export const register = (data) => (dispatch) => {
   dispatch(registerPending())
-  registerUser(data)
+  saveUser(data)
   .then((response) => {
     dispatch(registerSuccess())
   })
@@ -25,7 +25,7 @@ export const register = (data) => (dispatch) => {
 
 export const registerGuest = (data) => (dispatch) => {
   dispatch(registerPending())
-  registerGuest(data)
+  saveGuest(data)
   .then((response) => {
     dispatch(registerSuccess())
   })

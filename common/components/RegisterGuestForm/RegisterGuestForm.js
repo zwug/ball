@@ -24,11 +24,11 @@ class RegisterFormGuest extends Component {
     return (
       <form onSubmit={handleSubmit} noValidate >
         <Field name="name" type="text" component={FormField} label="ФИО"/>
-        <Field name="number" component={FormField} label="Телефон"/>
+        <Field name="phone" component={FormField} label="Телефон"/>
         <Field name="email" type="email" component={FormField} label="Email"/>
         <label className={s.choiseLabel}>
           Количество билетов
-          <Field className={s.select} name="tickets" component="select">
+          <Field className={s.select} name="ticketsCount" component="select">
             {this.renderTicketOptions()}
           </Field>
         </label>
@@ -44,8 +44,8 @@ const validate = values => {
   const requiredFields = [
     'name',
     'email',
-    'number',
-    'tickets'
+    'phone',
+    'ticketsCount'
   ]
   const errors = {}
 

@@ -10,6 +10,7 @@ export const registerUser = (data) => {
     'hasPartner': data.hasPartner,
     'level': data.level,
     'partner': data.partner,
+    'sex': data.sex,
     'phone': data.phone,
     'vk': data.vk
   }
@@ -17,16 +18,11 @@ export const registerUser = (data) => {
 }
 
 export const registerGuest = (data) => {
-  return fetch('/register', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      firstname: data.firstname,
-      lastname: data.lastname,
-      email: data.email
-    })
-  })
+  var user = {
+    'ticketsCount': data.ticketsCount,
+    'email': data.email,
+    'fio': data.name,
+    'phone': data.phone
+  }
+  return post('/registerguest', user)
 }

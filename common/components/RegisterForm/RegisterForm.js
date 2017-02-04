@@ -44,6 +44,14 @@ class RegisterForm extends Component {
         <Field name="date" type="date" component={FormField} label="Дата рождения"/>
         <Field name="phone" component={FormField} label="Телефон"/>
         <Field name="email" type="email" component={FormField} label="Email"/>
+        <Field
+          name="sex"
+          type="boolean"
+          inputLabels={['Леди', 'Джентльмен']}
+          inputValues={['female', 'male']}
+          component={FormField}
+          label="Пол"
+        />
         <Field name="vk" component={FormField} label="Ссылка на профиль вконтакте (для добавления в группу)"/>
         <div className={s.inputHeading}>Уровень танцевальной подготовки</div>
         {this.skillLevels.map((level, index) => (
@@ -86,7 +94,8 @@ const validate = values => {
     'phone',
     'vk',
     'debut',
-    'hasPartner'
+    'hasPartner',
+    'sex'
   ]
   const errors = {}
 
