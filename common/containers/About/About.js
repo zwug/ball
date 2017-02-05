@@ -7,13 +7,6 @@ import { members, slides } from './config'
 import Member from '../../components/Member/Member'
 import Carousel from 'nuka-carousel'
 
-const controlButton = (type, props) => (
-  <button className={s.button} onClick={previousSlide}>
-    {type === 'prev' && '<'}
-    {type === 'next' && '<'}
-  </button>
-)
-
 const Decorators = [{
   component: (props) => (
     <button className={s.button} onClick={props.previousSlide}>
@@ -36,7 +29,14 @@ const About = ({}) => (
     <div className={s.container}>
       <h1>О нас</h1>
       <div className={s.carouselContainer}>
-        <Carousel slidesToShow={1} cellAlign="center" decorators={Decorators} slideWidth={0.75} cellSpacing={200}>
+        <Carousel
+          slidesToShow={1}
+          cellAlign="center"
+          decorators={Decorators}
+          slideWidth={0.75}
+          cellSpacing={200}
+          initialSlideHeight={200}
+        >
           {slides.map((slide, index) => (
             <img key={index} src={slide} alt="о нас"/>
           ))}
