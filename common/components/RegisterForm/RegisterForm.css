@@ -15,7 +15,7 @@
 }
 
 .inputHeading {
-  padding-top: 15px;
+  padding-top: 20px;
   padding-bottom: 5px;
 }
 
@@ -26,6 +26,10 @@
 
 .label {
   display: block;
+}
+
+.error {
+  color: var(--brand-primary-color);
 }
 
 .checkInput {

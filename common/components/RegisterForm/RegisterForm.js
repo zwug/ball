@@ -15,6 +15,7 @@ class RegisterForm extends Component {
 
     this.skillLevels = ['Новичек', 'Любитель', 'Профи']
     this.balls = [
+      'Не был',
       'Весенний бал МГТУ МИРЭА',
       'Чёрно-белая сказка',
       'Путешествие в Трансильванию',
@@ -53,14 +54,13 @@ class RegisterForm extends Component {
           label="Пол"
         />
         <Field name="vk" component={FormField} label="Ссылка на профиль вконтакте (для добавления в группу)"/>
-        <div className={s.inputHeading}>Уровень танцевальной подготовки</div>
-        {this.skillLevels.map((level, index) => (
-          <label className={s.label} key={index}>
-            <Field className={s.checkInput} name="level" component="input" type="radio" value={`${index}`}>
-            </Field>
-            {level}
-          </label>
-        ))}
+        <Field
+          component={FormField}
+          inputLabels={['Новичек', 'Любитель', 'Профи']}
+          label="Уровень танцевальной подготовки"
+          name="level"
+          type="oneOfMany"
+        />
         <div className={s.inputHeading}>Если Вы были на балах МИРЭА, отметьте на каких</div>
         {this.balls.map((ball, index) => (
           <label className={s.label} key={index}>
@@ -88,17 +88,17 @@ class RegisterForm extends Component {
 
 const validate = values => {
   const requiredFields = [
-    'name',
     'date',
-    'email',
-    'phone',
-    'vk',
     'debut',
+    'email',
     'hasPartner',
-    'sex'
+    'level',
+    'name',
+    'phone',
+    'sex',
+    'vk'
   ]
   const errors = {}
-
   requiredFields.forEach((fieldName) => {
     if (!values[fieldName]) {
       errors[fieldName] = 'Поле обязательно'
@@ -125,8 +125,10 @@ const selector = formValueSelector('RegisterForm')
 RegisterForm = connect(
   state => {
     const hasPartner = selector(state, 'hasPartner')
+    const level = selector(state, 'level')
     return {
-      hasPartner
+      hasPartner,
+      level
     }
   }
 )(RegisterForm)

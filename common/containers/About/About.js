@@ -30,12 +30,12 @@ const About = ({}) => (
       <h1>О нас</h1>
       <div className={s.carouselContainer}>
         <Carousel
-          slidesToShow={1}
           cellAlign="center"
-          decorators={Decorators}
-          slideWidth={0.75}
           cellSpacing={200}
+          decorators={Decorators}
           initialSlideHeight={200}
+          slidesToShow={1}
+          slideWidth={0.75}
         >
           {slides.map((slide, index) => (
             <img key={index} src={slide} alt="о нас"/>

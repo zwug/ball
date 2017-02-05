@@ -38,15 +38,18 @@ class FormField extends Component {
     } else if (type === 'boolean') {
       const labels = inputLabels || ['Нет', 'Да'];
       const values = inputValues || ['false', 'true'];
-      return  (
-        <div>
-          {labels.map((label, index) => (
-            <label className={s.choiseLabel} key={index}>
-              <input {...input} className={s.checkInput} type="radio" value={values[index]} />
-              {label}
-            </label>
-          ))}
-        </div>
+      return labels.map((label, index) =>
+        <label className={s.choiseLabel} key={index}>
+          <input {...input} className={s.checkInput} type="radio" value={values[index]} />
+          {label}
+        </label>
+      )
+    } else if (type === 'oneOfMany') {
+      return inputLabels.map((label, index) =>
+        <label className={s.choiseLabel} key={index}>
+          <input {...input} className={s.checkInput} type="radio" value={`${index}`} />
+          {label}
+        </label>
       )
     }
     return (<input className={s.input} {...input} type={type}/>)
