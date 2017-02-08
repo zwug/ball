@@ -39,7 +39,8 @@
     "sequelize": "^3.24.5",
     "sequelize-cli": "^2.4.0",
     "serve-static": "^1.10.0",
-    "url-loader": "^0.5.7"
+    "url-loader": "^0.5.7",
+    "whatwg-fetch": "^2.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.1",

@@ -22,7 +22,7 @@ class RegisterFormGuest extends Component {
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props
     return (
-      <form onSubmit={handleSubmit} noValidate >
+      <form onSubmit={handleSubmit} noValidate autoComplete="off">
         <Field name="name" type="text" component={FormField} label="ФИО"/>
         <Field name="phone" component={FormField} label="Телефон"/>
         <Field name="email" type="email" component={FormField} label="Email"/>

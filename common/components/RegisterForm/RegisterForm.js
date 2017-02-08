@@ -15,7 +15,7 @@ class RegisterForm extends Component {
 
     this.skillLevels = ['Новичек', 'Любитель', 'Профи']
     this.balls = [
-      'Не был',
+      'Этот будет первым',
       'Весенний бал МГТУ МИРЭА',
       'Чёрно-белая сказка',
       'Путешествие в Трансильванию',
@@ -40,7 +40,7 @@ class RegisterForm extends Component {
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props
     return (
-      <form onSubmit={handleSubmit(this.handleSubmit)} noValidate >
+      <form onSubmit={handleSubmit(this.handleSubmit)} noValidate autoComplete="off">
         <Field name="name" type="text" component={FormField} label="ФИО"/>
         <Field name="date" type="date" component={FormField} label="Дата рождения"/>
         <Field name="phone" component={FormField} label="Телефон"/>

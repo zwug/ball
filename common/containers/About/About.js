@@ -38,7 +38,7 @@ const About = ({}) => (
           slideWidth={0.75}
         >
           {slides.map((slide, index) => (
-            <img key={index} src={slide} alt="о нас"/>
+            <img key={index} src={slide} alt="о нас" onLoad={() => {window.dispatchEvent(new Event('resize'));}}/>
           ))}
         </Carousel>
       </div>

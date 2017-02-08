@@ -12,6 +12,11 @@
   margin-top: 10px;
   outline: none;
   padding: 15px;
+
+  &:disabled {
+    cursor: wait;
+    opacity: .8;
+  }
 }
 
 .inputHeading {
@@ -19,9 +24,8 @@
   padding-bottom: 5px;
 }
 
-.label, .choiseLabel {
+.label {
   padding: 5px 0;
-  text-transform: capitalize;
 }
 
 .label {

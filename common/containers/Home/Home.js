@@ -38,6 +38,13 @@ class Home extends Component {
     })
   }
 
+  onRegsterSelectClick() {
+    this.props.userActions.resetRegister()
+    this.setState({
+      activeForm: null
+    })
+  }
+
   renderFormSelect() {
     if (this.state.activeForm === null) {
       return (
@@ -56,7 +63,20 @@ class Home extends Component {
 
   renderForm() {
     if (this.props.user.registerSuccess) {
-      return (<h3>Вы успешно зарегистрировались!</h3>)
+      return (
+        <div>
+          <p>Cпасибо, ваша бронь билета успешно прошла.
+            <br/>
+            Вам необходимо выкупить билет в течении 5 дней.
+            Если у вас остались вопросы, пишите нам на почту:&nbsp;
+            <a className={s.emailLink} href="mailto:info@tridevyatoe.org">info@tridevyatoe.org</a>
+          </p>
+          <br/>
+          <button className={s.button} onClick={this.onRegsterSelectClick.bind(this)}>
+            Вернуться к выбору регистрации
+          </button>
+        </div>
+      )
     } else if (this.state.activeForm === 'member') {
       return <RegisterForm onSubmit={this.props.userActions.register} />
     } else if (this.state.activeForm === 'guest') {
@@ -91,6 +111,12 @@ class Home extends Component {
              Организовываем сказочные балы любого формата.</p>
           {this.renderFormSelect()}
           {this.renderForm()}
+          {user.registerFail &&
+            <div className={s.errorDesc}>
+              К сожалению, отправка заявки завершилась неудачей, проверьте вводимые данные или свяжитесь с нами по почте&nbsp;
+              <a className={s.emailLink} href="mailto:info@tridevyatoe.org">info@tridevyatoe.org</a>
+            </div>
+          }
         </div>
         <Footer />
       </div>

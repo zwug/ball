@@ -59,6 +59,10 @@
   justify-content: space-around;
 }
 
+.emailLink {
+  color: var(--brand-primary-color); 
+}
+
 @media (--sm-viewport) {
   .heading {
     font-size: 32px;
