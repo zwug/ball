@@ -61,7 +61,7 @@ class RegisterForm extends Component {
           name="level"
           type="oneOfMany"
         />
-        <div className={s.inputHeading}>Если Вы были на балах МИРЭА, отметьте на каких</div>
+        <div className={s.inputHeading}>Если вы были на балах МИРЭА, отметьте на каких</div>
         {this.balls.map((ball, index) => (
           <label className={s.label} key={index}>
             <Field
@@ -73,11 +73,11 @@ class RegisterForm extends Component {
             {ball}
           </label>
         ))}
-        <Field name="hasPartner" type="boolean" component={FormField} label="Есть ли у Вас пара на бал?"/>
+        <Field name="hasPartner" type="boolean" component={FormField} label="Есть ли у вас пара на бал?"/>
         {this.props.hasPartner === 'true' &&
           <Field name="partner" component={FormField} label="ФИО партнера"/>}
 
-        <Field name="debut" type="boolean" component={FormField} label="Хотите ли Вы быть дебютантом бала?"/>
+        <Field name="debut" type="boolean" component={FormField} label="Хотите ли вы быть дебютантом бала?"/>
         <div>
           <button className={s.button} type="submit" disabled={submitting}>Зарегистрироваться!</button>
         </div>
