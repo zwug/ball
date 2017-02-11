@@ -13,6 +13,7 @@ const Header = ({opaque}) => {
       <div className={s.items}>
         <Link className={s.link} to='/'>Главная</Link>
         <Link className={s.link} to='/about'>О нас</Link>
+        <Link className={s.link} to='/gallery'>Галерея</Link>
       </div>
     </header>
   )

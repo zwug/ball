@@ -1,0 +1,35 @@
+@import '../../components/variables.css';
+
+.container {
+  margin: auto;
+  max-width: var(--container-width);
+  padding: 0 10px;
+}
+
+.carouselContainer {
+  margin: 30px 0;
+}
+
+.button {
+  --size: 40px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: none;
+  color: var(--main-font-color);
+  cursor: pointer;
+  font-size: 32px;
+  font-weight: bold;
+  height: var(--size);
+  margin: 10px;
+  outline: none;
+  width: var(--size);
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.eventTitle {
+  text-align: center;
+  padding-top: 30px;
+}
