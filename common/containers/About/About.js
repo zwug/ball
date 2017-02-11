@@ -28,6 +28,10 @@ const About = ({}) => (
     <Header/>
     <div className={s.container}>
       <h1>О нас</h1>
+      {members.map((member, key) => {
+        const reverse = key % 2 === 1;
+        return <Member key={key} reverse={reverse} {...member}/>
+      })}
       <div className={s.carouselContainer}>
         <Carousel
           cellAlign="center"
@@ -35,17 +39,13 @@ const About = ({}) => (
           decorators={Decorators}
           initialSlideHeight={200}
           slidesToShow={1}
-          slideWidth={0.75}
+          slideWidth={0.8}
         >
           {slides.map((slide, index) => (
             <img key={index} src={slide} alt="о нас" onLoad={() => {window.dispatchEvent(new Event('resize'));}}/>
           ))}
         </Carousel>
       </div>
-      {members.map((member, key) => {
-        const reverse = key % 2 === 1;
-        return <Member key={key} reverse={reverse} {...member}/>
-      })}
     </div>
     <Footer />
   </div>
