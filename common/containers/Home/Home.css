@@ -7,7 +7,8 @@
 }
 
 .videoContainer {
-  height: 450px;
+  height: 100vh;
+  min-height: 500px;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -15,8 +16,10 @@
 
 .headingContainer {
   background: rgba(0, 0, 0, 0.6);
-  font-family: Tridevyatoe;
+  display: flex;
+  flex-direction: column;
   height: 100%;
+  justify-content: center;
   position: absolute;
   text-align: center;
   top: 0;
@@ -25,20 +28,21 @@
 
 .heading {
   font-size: 48px;
-  padding: 80px 50px 0;
+  padding: 0 50px;
 }
 
 .logo {
+  --logo-size: 300px;
   background-image: url("../../../static/img/logo.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  height: 300px;
-  margin: auto;
+  height: var(--logo-size);
+  margin: 0 auto;
+  width: var(--logo-size);
 }
 
 .video {
-  margin-top: -30px;
   width: 100%;
 }
 
@@ -60,7 +64,7 @@
 }
 
 .emailLink {
-  color: var(--brand-primary-color); 
+  color: var(--brand-primary-color);
 }
 
 @media (--sm-viewport) {
@@ -73,11 +77,17 @@
 @media (--xs-viewport) {
   .heading {
     font-size: 24px;
-    padding: 40px 10px 0;
+    padding: 0 10px;
   }
 
   .videoContainer {
-    height: 160px;
+    min-height: 320px;
+  }
+
+  .logo {
+    --logo-size: 150px;
+    height: var(--logo-size);
+    width: var(--logo-size);
   }
 
   .formSelect {

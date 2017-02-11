@@ -8,4 +8,5 @@
   --main-font-color: #c8c8c8;
   background-color: var(--main-bg-color);
   color: var(--main-font-color);
+  font-family: Kurale;
 }

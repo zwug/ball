@@ -1,0 +1,14 @@
+.controlsContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.controlItem {
+  padding: 10px;
+  cursor: pointer;
+  transition: color .3s ease;
+
+  &:hover {
+    color: #fff;
+  }
+}

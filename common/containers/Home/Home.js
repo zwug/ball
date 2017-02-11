@@ -101,14 +101,12 @@ class Home extends Component {
             </video>
           }
           <div className={s.headingContainer}>
+            <div className={s.logo}></div>
             <h1 className={s.heading}>Добро пожаловать в Тридевятое!</h1>
           </div>
         </div>
         <div className={s.container}>
           <Panels />
-          <div className={s.logo}></div>
-          <p>Мы - творческое объединение людей, знающих своё дело.
-             Организовываем сказочные балы любого формата.</p>
           {this.renderFormSelect()}
           {this.renderForm()}
           {user.registerFail &&

@@ -8,9 +8,19 @@ class Panels extends Component {
   }
 
   render() {
+    const controlNames = [
+      'Участники',
+      'Гости'
+    ];
     return (
       <div className={s.root}>
-        <div className={s.controlItem}></div>
+        <div className={s.controlsContainer}>
+          {controlNames.map((control, index) =>
+            <div className={s.controlItem} key={index}>
+              {control}
+            </div>
+          )}
+        </div>
       </div>
     )
   }
