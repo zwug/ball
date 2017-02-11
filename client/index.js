@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import { syncHistoryWithStore } from 'react-router-redux'
 import configureStore from '../common/store/configureStore'
 import Root from '../common/containers/Root'
+import './metrika'
 
 const store = configureStore()
 const history = syncHistoryWithStore(browserHistory, store)
