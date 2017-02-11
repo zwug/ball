@@ -52,6 +52,7 @@
   border: 2px solid var(--brand-primary-color);
   color: var(--brand-primary-color);
   cursor: pointer;
+  font-family: Kurale;
   font-size: 18px;
   font-weight: bold;
   outline: none;

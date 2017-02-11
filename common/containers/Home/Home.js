@@ -48,7 +48,7 @@ class Home extends Component {
   renderFormSelect() {
     if (this.state.activeForm === null) {
       return (
-        <div className={s.formSelect}>
+        <div className={s.formSelect} id='register'>
           <button className={s.button} onClick={this.onMemeberClick.bind(this)}>
             Хочу стать участником!
           </button>
