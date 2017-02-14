@@ -13,9 +13,8 @@ class RegisterForm extends Component {
   constructor(props) {
     super(props)
 
-    this.skillLevels = ['Новичек', 'Любитель', 'Профи']
+    this.skillLevels = ['Новичок', 'Любитель', 'Профи']
     this.balls = [
-      'Этот будет первым',
       'Весенний бал МГТУ МИРЭА',
       'Чёрно-белая сказка',
       'Путешествие в Трансильванию',
@@ -61,7 +60,7 @@ class RegisterForm extends Component {
           name="level"
           type="oneOfMany"
         />
-        <div className={s.inputHeading}>Если вы были на балах МИРЭА, отметьте на каких</div>
+        <div className={s.inputHeading}>Если вы были на балах МИРЭА, отметьте, на каких</div>
         {this.balls.map((ball, index) => (
           <label className={s.label} key={index}>
             <Field
