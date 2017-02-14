@@ -106,6 +106,9 @@ class Home extends Component {
           </div>
         </div>
         <div className={s.container}>
+          <div className={s.kremlinContainer}>
+            <h1 className={s.kremlinHeading}>Бал в Измайловском кремле</h1>
+          </div>
           <Panels />
           {this.renderFormSelect()}
           {this.renderForm()}

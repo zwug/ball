@@ -33,7 +33,7 @@
 
 .logo {
   --logo-size: 300px;
-  background-image: url("../../../static/img/logo2.png");
+  background-image: url("../../../static/img/logo.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -47,6 +47,22 @@
   min-height: 100%;
   min-width: 100%;
   margin: auto;
+}
+
+.kremlinContainer {
+  align-items: flex-end;
+  background-image: url("../../../static/img/kremlin.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 4px;
+  display: flex;
+  height: 400px;
+  justify-content: center;
+}
+
+.kremlinHeading {
+  padding: 30px 0;
 }
 
 .button {
@@ -65,6 +81,7 @@
 .formSelect {
   display: flex;
   justify-content: space-around;
+  margin: 80px 0px;
 }
 
 .emailLink {
