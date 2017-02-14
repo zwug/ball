@@ -1,6 +1,6 @@
 export const events = [
   {
-    title: 'Весенний бал',
+    title: 'Весенний бал МГТУ МИРЭА',
     slides: [
       require('../../../static/img/gallery/spring/1.jpg'),
       require('../../../static/img/gallery/spring/2.jpg'),
@@ -30,7 +30,7 @@ export const events = [
    ]
  },
   {
-    title: 'Новогодний бал',
+    title: 'Новогодний Венский бал',
     slides: [
       require('../../../static/img/gallery/newyear/1.jpg'),
       require('../../../static/img/gallery/newyear/2.jpg'),
