@@ -12,8 +12,6 @@ class RegisterForm extends Component {
 
   constructor(props) {
     super(props)
-
-    this.skillLevels = ['Новичок', 'Любитель', 'Профи']
     this.balls = [
       'Весенний бал МГТУ МИРЭА',
       'Чёрно-белая сказка',
@@ -55,7 +53,7 @@ class RegisterForm extends Component {
         <Field name="vk" component={FormField} label="Ссылка на профиль вконтакте (для добавления в группу)"/>
         <Field
           component={FormField}
-          inputLabels={['Новичек', 'Любитель', 'Профи']}
+          inputLabels={['Новичок', 'Любитель', 'Профи']}
           label="Уровень танцевальной подготовки"
           name="level"
           type="oneOfMany"

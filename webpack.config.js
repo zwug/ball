@@ -44,7 +44,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg|woff|eot|ttf|woff2)$/,
+        test: /\.(pdf|png|jpg|jpeg|gif|svg|woff|eot|ttf|woff2)$/,
         loader: 'url-loader',
         query: {
           name: '[hash].[ext]',

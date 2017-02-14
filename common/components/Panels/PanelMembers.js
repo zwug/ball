@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react'
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import { Link } from 'react-router';
-import s from './Panels.css';
+import withStyles from 'isomorphic-style-loader/lib/withStyles'
+import { Link } from 'react-router'
+import s from './Panels.css'
+const offer = require('../../../static/docs/oferta.pdf')
 
 const PanelMembers = ({onLinkClick}) => (
   <div>
@@ -22,6 +23,17 @@ const PanelMembers = ({onLinkClick}) => (
       , в течение
       пяти дней выкупить билет, и приходить на репетиции =).
     </p>
+    <p>Правила участников:</p>
+    <ol>
+      <li>посещение репетиций (не менее 10 раз)</li>
+      <li>соответствовать дресс-коду на балу: необходимо быть в образе сказочного героя из мультфильмов или детских сказок (аниме не разрешается)</li>
+      <li>выбор образа необходимо согласовать с Ольгой (ссылка в вк) или прислать образ и описание на почту bal@tridevyatoe.org</li>
+      <li>на репетициях иметь сменную обувь</li>
+      <li>
+        ознакомиться с&nbsp;
+        <a className={s.link} href={offer} target="_blank">пользовательским соглашением</a>
+      </li>
+    </ol>
     <p>
       О стоимости билета и о скидках вы можете узнать&nbsp;
       <a className={s.link} onClick={onLinkClick}>здесь</a>.
