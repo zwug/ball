@@ -49,7 +49,7 @@ class Panels extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      activePanel: panelConfig.members
+      activePanel: panelConfig.tickets
     }
   }
 

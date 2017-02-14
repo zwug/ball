@@ -40,6 +40,7 @@ class Gallery extends Component {
                   initialSlideHeight={200}
                   slidesToShow={1}
                   slideWidth={0.9}
+                  wrapAround
                 >
                   {event.slides.map((slide, slideIndex) => (
                     <img key={slideIndex} src={slide} onLoad={() => {window.dispatchEvent(new Event('resize'))}}/>

@@ -40,6 +40,7 @@ const About = ({}) => (
           initialSlideHeight={200}
           slidesToShow={1}
           slideWidth={0.8}
+          wrapAround
         >
           {slides.map((slide, index) => (
             <img key={index} src={slide} alt="о нас" onLoad={() => {window.dispatchEvent(new Event('resize'));}}/>
