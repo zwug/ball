@@ -35,6 +35,9 @@ export const register = (data) => (dispatch) => {
   .then((response) => {
     dispatch(registerSuccess())
   })
+  .catch((err) => {
+    dispatch(registerFail())
+  })
 }
 
 export const resetRegister = (data) => (dispatch) => {
