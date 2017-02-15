@@ -26,7 +26,8 @@ class FormField extends Component {
       return (
         <DatePicker
           {...input}
-          locale="ru-ru"
+          locale='ru-ru'
+          dateFormat='YYYY.MM.DD'
           selected={this.state.date}
           onChange={this.onDateChange.bind(this)}
           showYearDropdown
