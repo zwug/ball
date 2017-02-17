@@ -12,12 +12,18 @@ function registerPending() {
 }
 
 function registerSuccess() {
+  if (window.yaCounter42739064) {
+    window.yaCounter42739064.reachGoal('register_member_success');
+  }
   return {
     type: REGISTER_SUCCESS
   }
 }
 
 function registerFail() {
+  if (window.yaCounter42739064) {
+    window.yaCounter42739064.reachGoal('register_member_fail');
+  }
   return {
     type: REGISTER_FAIL
   }
@@ -30,6 +36,9 @@ function registerFinish() {
 }
 
 export const register = (data) => (dispatch) => {
+  if (window.yaCounter42739064) {
+    window.yaCounter42739064.reachGoal('register_member_submit');
+  }
   dispatch(registerPending())
   return saveUser(data)
   .then((response) => {
