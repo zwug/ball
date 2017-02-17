@@ -9,6 +9,7 @@ import PanelDebutants from './PanelDebutants'
 import PanelCompetition from './PanelCompetition'
 import PanelPlace from './PanelPlace'
 import PanelVisagist from './PanelVisagist'
+import PanelContacts from './PanelContacts'
 
 const panelConfig = {
   members: {
@@ -32,16 +33,20 @@ const panelConfig = {
     component: PanelDebutants
   },
   competition: {
-    label: 'Король и Королева бала',
+    label: 'Король и Королева',
     component: PanelCompetition
   },
   place: {
-    label: 'Место и время бала',
+    label: 'Место и время',
     component: PanelPlace
   },
   visagist: {
     label: 'Визажисты',
     component: PanelVisagist
+  },
+  contacts: {
+    label: 'Контакты',
+    component: PanelContacts
   }
 }
 
