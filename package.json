@@ -13,6 +13,7 @@
     "babel-plugin-transform-class-properties": "^6.16.0",
     "babel-polyfill": "^6.3.14",
     "babel-register": "^6.4.3",
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.15.2",
     "css-loader": "^0.26.1",
     "express": "^4.13.3",
