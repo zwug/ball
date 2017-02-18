@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import withStyles from 'isomorphic-style-loader/lib/withStyles'
 import { Link } from 'react-router'
 import s from './Panels.css'
-const offer = require('../../../static/docs/oferta.pdf')
+const agreement = require('../../../static/docs/user_agreement.pdf')
 
 const PanelMembers = ({onLinkClick}) => (
   <div>
@@ -37,7 +37,7 @@ const PanelMembers = ({onLinkClick}) => (
       <li>на репетициях иметь сменную обувь</li>
       <li>
         ознакомиться с&nbsp;
-        <a className={s.link} href={offer} target="_blank">пользовательским соглашением</a>
+        <a className={s.link} href={agreement} target="_blank">пользовательским соглашением</a>
       </li>
     </ol>
     <p>

@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import withStyles from 'isomorphic-style-loader/lib/withStyles'
 import { Field, reduxForm } from 'redux-form'
 import FormField from '../FormField/FormField'
-const offer = require('../../../static/docs/oferta.pdf')
+const agreement = require('../../../static/docs/user_agreement.pdf')
 import s from '../RegisterForm/RegisterForm.css'
 
 class RegisterFormGuest extends Component {
@@ -25,7 +25,7 @@ class RegisterFormGuest extends Component {
     const offerLabel = (
       <span>
         Я принимаю&nbsp;
-        <a className={s.link} href={offer} target="_blank">
+        <a className={s.link} href={agreement} target="_blank">
           пользовательское соглашение
         </a>.
       </span>
