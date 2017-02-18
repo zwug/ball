@@ -8,7 +8,7 @@ class FormField extends Component {
     children: PropTypes.element,
     error: PropTypes.string,
     input: PropTypes.object,
-    label: PropTypes.string,
+    label: PropTypes.node,
     touched: PropTypes.bool,
     type: PropTypes.string,
     warning: PropTypes.string
@@ -68,6 +68,15 @@ class FormField extends Component {
   render() {
     const { children, input, label, type, inputLabels, inputValues,
         meta: { touched, error, warning } } = this.props;
+    if (type === "checkbox") {
+      return (
+        <label className={s.label}>
+          <input className={s.input} {...input} type={type} />
+          {label}&nbsp;
+          {touched && ((error && <span className={s.error}>{error}</span>) || (warning && <span>{warning}</span>))}
+        </label>
+      )
+    }
     return (
       <div>
         <label className={s.label}>{label}&nbsp;</label>

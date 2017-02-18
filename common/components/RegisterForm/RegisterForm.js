@@ -3,6 +3,7 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles'
 import { connect } from 'react-redux'
 import { Field, reduxForm, formValueSelector } from 'redux-form'
 import FormField from '../FormField/FormField'
+const offer = require('../../../static/docs/oferta.pdf')
 import s from './RegisterForm.css'
 
 class RegisterForm extends Component {
@@ -36,6 +37,14 @@ class RegisterForm extends Component {
 
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props
+    const offerLabel = (
+      <span>
+        Я принимаю&nbsp;
+        <a className={s.link} href={offer} target="_blank">
+          пользовательское соглашение
+        </a>.
+      </span>
+    );
     return (
       <form onSubmit={handleSubmit(this.handleSubmit)} noValidate autoComplete="off">
         <Field name="name" type="text" component={FormField} label="ФИО"/>
@@ -75,6 +84,7 @@ class RegisterForm extends Component {
           <Field name="partner" component={FormField} label="ФИО партнера"/>}
 
         <Field name="debut" type="boolean" component={FormField} label="Хотите ли вы быть дебютантом бала?"/>
+        <Field name="offerAccept" type="checkbox" component={FormField} label={offerLabel}/>
         <div>
           <button className={s.button} type="submit" disabled={submitting}>Зарегистрироваться!</button>
         </div>
@@ -91,6 +101,7 @@ const validate = values => {
     'hasPartner',
     'level',
     'name',
+    'offerAccept',
     'phone',
     'sex',
     'vk'

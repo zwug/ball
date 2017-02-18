@@ -19,6 +19,10 @@
   }
 }
 
+.link {
+  color: var(--brand-primary-color);
+}
+
 .inputHeading {
   padding-top: 20px;
   padding-bottom: 5px;

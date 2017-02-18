@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import withStyles from 'isomorphic-style-loader/lib/withStyles'
 import { Field, reduxForm } from 'redux-form'
 import FormField from '../FormField/FormField'
+const offer = require('../../../static/docs/oferta.pdf')
 import s from '../RegisterForm/RegisterForm.css'
 
 class RegisterFormGuest extends Component {
@@ -21,17 +22,28 @@ class RegisterFormGuest extends Component {
 
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props
+    const offerLabel = (
+      <span>
+        Я принимаю&nbsp;
+        <a className={s.link} href={offer} target="_blank">
+          пользовательское соглашение
+        </a>.
+      </span>
+    );
     return (
       <form onSubmit={handleSubmit} noValidate autoComplete="off">
         <Field name="name" type="text" component={FormField} label="ФИО"/>
         <Field name="phone" component={FormField} label="Телефон"/>
         <Field name="email" type="email" component={FormField} label="Email"/>
-        <label className={s.choiseLabel}>
-          Количество билетов
-          <Field className={s.select} name="ticketsCount" component="select">
-            {this.renderTicketOptions()}
-          </Field>
-        </label>
+        <div>
+          <label className={s.choiseLabel}>
+            Количество билетов
+            <Field className={s.select} name="ticketsCount" component="select">
+              {this.renderTicketOptions()}
+            </Field>
+          </label>
+        </div>
+        <Field name="offerAccept" type="checkbox" component={FormField} label={offerLabel}/>
         <div>
           <button className={s.button} type="submit" disabled={submitting}>Зарегистрироваться!</button>
         </div>
@@ -44,6 +56,7 @@ const validate = values => {
   const requiredFields = [
     'name',
     'email',
+    'offerAccept',
     'phone',
     'ticketsCount'
   ]
