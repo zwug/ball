@@ -11,7 +11,7 @@ const Footer = () => (
           <div className={s.kopernik}></div>
         </a>
         <a className={s.link} href="mailto:info@tridevyatoe.org">info@tridevyatoe.org</a>
-        <a className={s.link} href={oferta} target="_blank">Оферта</a>
+        <a className={s.link} href={oferta} target="_blank">Публичная Оферта</a>
       </div>
     </footer>
 )

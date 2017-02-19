@@ -18,6 +18,7 @@ const PanelPlace = () => (
         info@tridevyatoe.org
       </a>
     </p>
+    <h3>Мы в социальных сетях</h3>
     <p>
       <a className={s.link} href="https://www.instagram.com/tri_devyatoe_bal/" target="_blank">
         Instagram
@@ -26,6 +27,11 @@ const PanelPlace = () => (
     <p>
       <a className={s.link} href="https://vk.com/tri.devyatoe" target="_blank">
         VK
+      </a>
+    </p>
+    <p>
+      <a className={s.link} href="https://t.me/tri_devyatoe" target="_blank">
+        Telegram
       </a>
     </p>
   </div>

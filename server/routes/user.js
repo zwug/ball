@@ -1,7 +1,7 @@
 import models from '../models'
 
 exports.register = (req, res) => {
-  var balls = req.body.balls && req.body.balls.toString();
+  var balls = req.body.balls && req.body.balls.join('|');
   const user = models.user.build({
     'fio': req.body.fio,
     'balls': balls,
