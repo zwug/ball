@@ -8,19 +8,69 @@ import LoginForm from './LoginForm'
 
 class Admin extends Component {
   renderMembers() {
-    console.log('render guests', this.props.admin.orders);
     if (!this.props.admin.orders.members) {
       return null
     }
     return (
-      <table>
+      <table className={s.table}>
         <thead>
-          <th>email</th>
+          <tr>
+            <th>email</th>
+            <th>ФИО</th>
+            <th>Телефон</th>
+            <th>ВК</th>
+            <th>Создан (UTC)</th>
+            <th>уровень танцев</th>
+            <th>Пол</th>
+            <th>Дата рождения</th>
+            <th>Дебютант</th>
+            <th>Партнер</th>
+            <th>Балы</th>
+          </tr>
         </thead>
         <tbody>
           {this.props.admin.orders.members.map((member, key) => (
             <tr key={key}>
               <td>{member.email}</td>
+              <td>{member.fio}</td>
+              <td>{member.phone}</td>
+              <td>{member.vk}</td>
+              <td>{member.createdAt}</td>
+              <td>{member.level}</td>
+              <td>{member.sex}</td>
+              <td>{member['birth_date']}</td>
+              <td>{member.debut ? 'да' : 'нет'}</td>
+              <td>{member.partner || 'нет'}</td>
+              <td>{member.balls}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )
+  }
+  renderGuests() {
+    if (!this.props.admin.orders.guests) {
+      return null
+    }
+    return (
+      <table className={s.table}>
+        <thead>
+          <tr>
+            <th>email</th>
+            <th>ФИО</th>
+            <th>Телефон</th>
+            <th>количество билетов</th>
+            <th>Создан (UTC)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.props.admin.orders.guests.map((guest, key) => (
+            <tr key={key}>
+              <td>{guest.email}</td>
+              <td>{guest.fio}</td>
+              <td>{guest.phone}</td>
+              <td>{guest['tickets_count']}</td>
+              <td>{guest.createdAt}</td>
             </tr>
           ))}
         </tbody>
@@ -32,10 +82,13 @@ class Admin extends Component {
       return <LoginForm onSubmit={this.props.adminActions.login}/>
     }
     return (
-      <div>
+      <div className={s.container}>
         <button onClick={this.props.adminActions.getOrders}>Обновить</button>
         <h1>Участники</h1>
         {this.renderMembers()}
+        <hr/>
+        <h1>Гости</h1>
+        {this.renderGuests()}
       </div>
     )
   }
