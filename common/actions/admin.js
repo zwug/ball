@@ -56,12 +56,10 @@ function ordersFail() {
 export const login = (data) => (dispatch) => {
   return loginRequest(data)
   .then((response) => {
-    console.log(response);
     setCookie('token', response['token'], 1)
     dispatch(loginSuccess())
   })
   .catch((err) => {
-    console.log(err);
     dispatch(loginFail())
   })
 }
@@ -79,7 +77,6 @@ export const getOrders = () => (dispatch) => {
     dispatch(ordersSuccess(ordersParsed))
   })
   .catch((err) => {
-    console.log(err);
     dispatch(ordersFail())
   })
 }

@@ -32,7 +32,6 @@ exports.login = (req, res) => {
       return
     }
     bcrypt.compare(password, admin.password, (err, result) => {
-      console.log(err, result);
       if (err || !result) {
         res.sendStatus(401)
         return

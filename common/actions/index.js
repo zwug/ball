@@ -24,7 +24,6 @@ export const getHundred = () => (dispatch) => {
   .then(data => data.json())
   .then((json) => {
     dispatch(set(100))
-    console.log(json);
   })
 }
 
