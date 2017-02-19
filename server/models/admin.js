@@ -9,10 +9,6 @@ module.exports = function(sequelize, DataTypes) {
     'password': {
       allowNull: false,
       type: DataTypes.STRING
-    },
-    'salt': {
-      allowNull: false,
-      type: DataTypes.STRING
     }
   }, {});
   return admin;
