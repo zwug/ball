@@ -8,17 +8,22 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      fio: {
-        type: Sequelize.STRING
+      'fio': {
+        allowNull: false,
+        type: DataTypes.STRING
       },
-      email: {
-        type: Sequelize.STRING
+      'email': {
+        allowNull: false,
+        primaryKey: true,
+        type: DataTypes.STRING
       },
-      phone: {
-        type: Sequelize.STRING
+      'phone': {
+        allowNull: false,
+        type: DataTypes.STRING
       },
-      tickets_count: {
-        type: Sequelize.INTEGER
+      'tickets_count': {
+        allowNull: false,
+        type: DataTypes.INTEGER
       },
       createdAt: {
         allowNull: false,
