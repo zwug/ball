@@ -10,6 +10,7 @@
 .link {
   color: var(--main-font-color);
   padding: 15px;
+  text-align: center;
   text-decoration: none;
 
   &:hover {
