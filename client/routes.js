@@ -6,6 +6,7 @@ import Layout from '../common/components/Layout/Layout'
 import Register from '../common/containers/Register'
 import Gallery from '../common/containers/Gallery/Gallery'
 import Admin from '../common/containers/Admin/Admin'
+import Signup from '../common/containers/Signup/Signup'
 
 export default (
   <Route path="/" component={Layout}>
@@ -15,5 +16,6 @@ export default (
     <Route path="/gallery" component={Gallery} />
     <Route path="/gallery" component={Gallery} />
     <Route path="/admin" component={Admin} />
+    <Route path="/signup" component={Signup} />
   </Route>
 );

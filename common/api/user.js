@@ -26,3 +26,11 @@ export const registerGuest = (data) => {
   }
   return post('/registerguest', user)
 }
+
+export const sendSignup = (data) => {
+  var user = {
+    'fio': data.name,
+    'phone': data.phone
+  }
+  return post('/sendsignup', user)
+}

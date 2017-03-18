@@ -1,9 +1,11 @@
-import { registerUser as saveUser, registerGuest as saveGuest } from '../api/user';
+import { registerUser as saveUser, registerGuest as saveGuest, sendSignup } from '../api/user';
 
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
 export const REGISTER_PENDING = 'REGISTER_PENDING'
 export const REGISTER_FAIL = 'REGISTER_FAIL'
 export const REGISTER_FINISH = 'REGISTER_FINISH'
+export const SIGNUP_FAIL = 'SIGNUP_FAIL'
+export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS'
 
 function registerPending() {
   return {
@@ -35,6 +37,18 @@ function registerFinish() {
   }
 }
 
+function signupSuccess() {
+  return {
+    type: SIGNUP_SUCCESS
+  }
+}
+
+function signupFail() {
+  return {
+    type: SIGNUP_FAIL
+  }
+}
+
 export const register = (data) => (dispatch) => {
   if (window.yaCounter42739064) {
     window.yaCounter42739064.reachGoal('register_member_submit');
@@ -61,5 +75,15 @@ export const registerGuest = (data) => (dispatch) => {
   })
   .catch((err) => {
     dispatch(registerFail())
+  })
+}
+
+export const signup = (data) => (dispatch) => {
+  return sendSignup(data)
+  .then((response) => {
+    dispatch(signupSuccess())
+  })
+  .catch((err) => {
+    dispatch(signupFail())
   })
 }

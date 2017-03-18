@@ -43,3 +43,18 @@ exports.registerGuest = (req, res) => {
     res.sendStatus(400)
   })
 }
+
+exports.signupHandler = (req, res) => {
+  const requestModel = models.request.build({
+    'fio': req.body.fio,
+    'phone': req.body.phone
+  })
+  requestModel.save()
+  .then(() => {
+    res.sendStatus(200)
+  })
+  .catch((err) => {
+    console.log(err);
+    res.sendStatus(400)
+  })
+}

@@ -1,6 +1,7 @@
 @import '../variables.css';
 
-.button {
+.button,
+.signupButton {
   background: var(--main-bg-color);
   border-radius: 4px;
   border: 2px solid var(--brand-primary-color);
@@ -17,6 +18,10 @@
     cursor: wait;
     opacity: .8;
   }
+}
+
+.signupButton {
+  width: 215px;
 }
 
 .link {
