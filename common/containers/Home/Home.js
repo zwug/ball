@@ -106,6 +106,9 @@ class Home extends Component {
           </div>
         </div>
         <div className={s.container}>
+          <div>
+            <h1 className={s.infoHeading}>Начало репетиций уже 25 марта!</h1>
+          </div>
           <div className={s.kremlinContainer}>
             <h1 className={s.kremlinHeading}>Бал в Измайловском кремле</h1>
           </div>

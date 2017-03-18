@@ -38,19 +38,6 @@ const PanelTickets = () => (
           Информация о счете
         </a>
         &nbsp;(зарегистрирован на имя Игоря Юрко).
-        <br/>
-
-        Мы принимаем
-        <span className={s.paymentTypes}></span>
-        <br/>
-        Сервис приёма оплаты предоставлен&nbsp;
-        <a
-          className={s.link}
-          href="http://payanyway.ru/"
-          target="_blank"
-        >
-          PayAnyWay
-        </a>.
       </li>
     </ul>
     <p>

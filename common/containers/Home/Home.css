@@ -31,6 +31,10 @@
   padding: 0 50px;
 }
 
+.infoHeading {
+  text-align: center; 
+}
+
 .logo {
   --logo-size: 300px;
   background-image: url("../../../static/img/logo.png");
