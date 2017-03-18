@@ -48,6 +48,34 @@ class Admin extends Component {
       </table>
     )
   }
+
+  renderRequests() {
+    if (!this.props.admin.orders.requests) {
+      return null
+    }
+
+    return (
+      <table className={s.table}>
+        <thead>
+          <tr>
+            <th>ФИО</th>
+            <th>Телефон</th>
+            <th>Создан (UTC)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.props.admin.orders.requests.map((request, key) => (
+            <tr key={key}>
+              <td>{request.fio}</td>
+              <td>{request.phone}</td>
+              <td>{request.createdAt}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )
+  }
+
   renderGuests() {
     if (!this.props.admin.orders.guests) {
       return null
@@ -89,6 +117,9 @@ class Admin extends Component {
         <hr/>
         <h1>Гости</h1>
         {this.renderGuests()}
+        <hr/>
+        <h1>Заявки</h1>
+        {this.renderRequests()}
       </div>
     )
   }

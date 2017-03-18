@@ -57,7 +57,10 @@ exports.getOrders = (req, res) => {
       orders.members = JSON.stringify(members)
       models.guest.findAll({}).then((guests) => {
         orders.guests = JSON.stringify(guests)
-        res.json(orders)
+        models.request.findAll({}).then((requests) => {
+          orders.requests = JSON.stringify(requests)
+          res.json(orders)
+        })
       })
     })
   })

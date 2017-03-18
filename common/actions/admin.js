@@ -72,7 +72,8 @@ export const getOrders = () => (dispatch) => {
   .then((orders) => {
     const ordersParsed = {
       guests: JSON.parse(orders['guests']),
-      members: JSON.parse(orders['members'])
+      members: JSON.parse(orders['members']),
+      requests: JSON.parse(orders['requests'])
     }
     dispatch(ordersSuccess(ordersParsed))
   })
