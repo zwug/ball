@@ -23,31 +23,35 @@ class Signup extends Component {
     const { signupSuccess, signupFail } = this.props.user
 
     return (
-      <div>
+      <div className={s.container}>
         <Header/>
-        <div className={s.headingContainer}>
-          <h1 className={s.heading}>Добро пожаловать в Тридевятое!</h1>
-          <div className={s.logo}></div>
-          <div className={s.sellingText}>
-            Бал в Измайловском кремле. Самые главные люди на балу – это участники. Это те люди, которые больше всех погружаются в атмосферу сказки, проводят несколько часов в неделю, обучаясь новым танцам, знакомясь с новыми людьми, подготавливая образы к незабываемому вечеру. Один раз придя на бал, вам захочется очутиться там снова и снова. На балу участников ждёт выбор Короля с Королевой бала, лотерея, памятные сувениры и фотографии, праздничный фуршет и многое другое.
-          </div>
-          <div className={s.contacts}>
-            <a className={s.link} href='tel:+79296564512'>
-              +7 (929) 656-45-12
-            </a>
-            <br/>
-            <a className={s.link} href="mailto:info@tridevyatoe.org">
-              info@tridevyatoe.org
-            </a>
-          </div>
-          {signupSuccess && <h1 className={s.heading}>Заявка отправлена!</h1>}
-          {signupFail && <p className={s.errorTitle}>Ошибка обработки заявки</p>}
-          {!signupSuccess &&
-            <div className={s.formContainer}>
-              <SignupForm onSubmit={this.props.userActions.signup} />
-            </div>
-          }
+        <h1 className={s.heading}>Добро пожаловать в Тридевятое!</h1>
+        <div className={s.logo}></div>
+        <div className={s.sellingText}>
+          <p>"Добро пожаловать в Тридевятое!" Тематический весенний бал.</p>
+          <p>Ты давно хотела оказаться в сказочном месте и чтобы тебя закружили в вальсе уверенные руки партнёра?</p>
+          <p>А ты давно хотел попасть туда, где тебя будут окружать 60 прекрасных дам, с которыми ты сможешь познакомиться?</p>
+          <p>Ты уже сейчас можешь вспоминать любимого героя из мультфильмов или сказок, в образе которого ты хочешь оказаться, ведь наш бал тематический!</p>
+          <p>25 марта начало репетиций! Успей приобрести билет!</p>
         </div>
+        <div className={s.contacts}>
+          <a className={s.link} href='tel:+79296564512'>
+            +7 (929) 656-45-12
+          </a>
+          <br/>
+          <a className={s.link} href="mailto:info@tridevyatoe.org">
+            info@tridevyatoe.org
+          </a>
+        </div>
+        {signupSuccess && <h1 className={s.heading}>Заявка отправлена!</h1>}
+        {signupFail && <p className={s.errorTitle}>Ошибка обработки заявки</p>}
+        {!signupSuccess &&
+          <div className={s.formContainer}>
+            <SignupForm onSubmit={this.props.userActions.signup} />
+          </div>
+        }
+        <div className={s.lady}></div>
+        <div className={s.gentleman}></div>
       </div>
     )
   }

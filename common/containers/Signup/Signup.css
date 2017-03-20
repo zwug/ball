@@ -1,8 +1,15 @@
 @import '../../components/variables.css';
 
+:root {
+  color: #000;
+  background-color: #E8F9F3;
+  --main-font-color: #000;
+  --brand-primary-color: #000;
+}
+
 .logo {
   --logo-size: 200px;
-  background-image: url("../../../static/img/logo.png");
+  background-image: url("../../../static/img/logo-black.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -13,8 +20,9 @@
 }
 
 .heading {
-  font-size: 32px;
-  padding: 15px 0;
+  font-size: 36px;
+  padding: 30px 0;
+  margin: 0;
   text-align: center;
 }
 
@@ -26,11 +34,13 @@
 .sellingText {
   font-size: 18px;
   padding: 0 30px;
+  text-align: center;
   margin: 5px auto;
   max-width: 500px;
 }
 
-.contacts, .sellingText {
+.contacts {
+  position: relative;
   text-align: center;
 }
 
@@ -45,6 +55,36 @@
   font-size: 20px;
   margin: 5px;
   text-align: center;
+}
+
+.lady,
+.gentleman {
+  background-position: bottom;
+  background-repeat: no-repeat;
+  bottom: 0;
+  opacity: .8;
+  position: absolute;
+}
+
+.lady {
+  background-image: url("../../../static/img/lady.png");
+  background-size: 240px;
+  height: 500px;
+  width: 300px;
+}
+
+.gentleman {
+  background-image: url("../../../static/img/gentleman.png");
+  background-size: 330px;
+  right: 0;
+  height: 500px;
+  width: 300px;
+}
+
+.container {
+  min-height: 100vh;
+  min-width: 992px;
+  position: relative;
 }
 
 @media (--xs-viewport) {

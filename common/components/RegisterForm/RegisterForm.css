@@ -2,7 +2,7 @@
 
 .button,
 .signupButton {
-  background: var(--main-bg-color);
+  background: transparent;
   border-radius: 4px;
   border: 2px solid var(--brand-primary-color);
   color: var(--brand-primary-color);
@@ -21,7 +21,7 @@
 }
 
 .signupButton {
-  width: 215px;
+  width: 100%;
 }
 
 .link {
