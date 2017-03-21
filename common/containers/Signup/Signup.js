@@ -1,9 +1,9 @@
 import React, { PropTypes, Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { Link } from 'react-router';
 import withStyles from 'isomorphic-style-loader/lib/withStyles'
 import s from './Signup.css'
-import Header from '../../components/Header/Header'
 import SignupForm from '../../components/SignupForm/SignupForm'
 import * as userActions from '../../actions/user'
 
@@ -24,7 +24,6 @@ class Signup extends Component {
 
     return (
       <div className={s.container}>
-        <Header/>
         <h1 className={s.heading}>Добро пожаловать в Тридевятое!</h1>
         <div className={s.logo}></div>
         <div className={s.sellingText}>
@@ -35,6 +34,8 @@ class Signup extends Component {
           <p>25 марта начало репетиций! Успей приобрести билет!</p>
         </div>
         <div className={s.contacts}>
+          <Link className={s.link} to='/'>tridevyatoe.org</Link>
+          <br/>
           <a className={s.link} href='tel:+79296564512'>
             +7 (929) 656-45-12
           </a>

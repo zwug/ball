@@ -20,7 +20,7 @@
 }
 
 .heading {
-  font-size: 36px;
+  font-size: 42px;
   padding: 30px 0;
   margin: 0;
   text-align: center;
@@ -29,6 +29,7 @@
 .formContainer {
   display: flex;
   justify-content: center;
+  padding-bottom: 50px;
 }
 
 .sellingText {
@@ -46,6 +47,7 @@
 
 .link {
   color: var(--brand-primary-color);
+  font-size: 24px;
   display: inline-block;
   padding: 5px;
 }
@@ -68,16 +70,16 @@
 
 .lady {
   background-image: url("../../../static/img/lady.png");
-  background-size: 240px;
-  height: 500px;
+  background-size: 280px;
+  height: 600px;
   width: 300px;
 }
 
 .gentleman {
   background-image: url("../../../static/img/gentleman.png");
-  background-size: 330px;
+  background-size: 400px;
   right: 0;
-  height: 500px;
+  height: 600px;
   width: 300px;
 }
 
