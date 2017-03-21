@@ -29,6 +29,7 @@ export const registerGuest = (data) => {
 
 export const sendSignup = (data) => {
   var user = {
+    'email': data.email,
     'fio': data.name,
     'phone': data.phone
   }

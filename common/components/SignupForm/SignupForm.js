@@ -16,6 +16,7 @@ class SignupForm extends Component {
       <form onSubmit={handleSubmit} noValidate autoComplete="off">
         <Field name="name" type="text" component={FormField} label="ФИО"/>
         <Field name="phone" component={FormField} label="Телефон"/>
+        <Field name="email" component={FormField} label="email"/>
         <div>
           <button className={s.signupButton} type="submit" disabled={submitting}>Отправить</button>
         </div>
@@ -27,7 +28,8 @@ class SignupForm extends Component {
 const validate = values => {
   const requiredFields = [
     'name',
-    'phone'
+    'phone',
+    'email'
   ]
   const errors = {}
 
@@ -36,6 +38,11 @@ const validate = values => {
       errors[fieldName] = 'Поле обязательно'
     }
   })
+
+  const emailRegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+  if (!errors.email && !emailRegExp.test(values.email)) {
+    errors.email = 'Неправильный формат почты'
+  }
 
   return errors
 }
