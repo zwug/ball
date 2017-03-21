@@ -46,6 +46,7 @@ exports.registerGuest = (req, res) => {
 
 exports.signupHandler = (req, res) => {
   const requestModel = models.request.build({
+    'email': req.body.email,
     'fio': req.body.fio,
     'phone': req.body.phone
   })
