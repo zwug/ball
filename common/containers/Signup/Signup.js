@@ -6,6 +6,7 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles'
 import s from './Signup.css'
 import SignupForm from '../../components/SignupForm/SignupForm'
 import * as userActions from '../../actions/user'
+import { browserHistory } from 'react-router';
 
 
 class Signup extends Component {
@@ -17,6 +18,14 @@ class Signup extends Component {
 
   constructor(props) {
     super(props)
+    const location = browserHistory.getCurrentLocation()
+    this.sex = location.query['s'] || null // f - female, m - male
+  }
+
+  componentWillMount() {
+    const location = Object.assign({}, browserHistory.getCurrentLocation());
+    delete location.query['s'];
+    browserHistory.push(location);
   }
 
   render() {

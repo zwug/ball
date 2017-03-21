@@ -60,6 +60,7 @@ class Admin extends Component {
           <tr>
             <th>ФИО</th>
             <th>Телефон</th>
+            <th>email</th>
             <th>Создан (UTC)</th>
           </tr>
         </thead>
@@ -68,6 +69,7 @@ class Admin extends Component {
             <tr key={key}>
               <td>{request.fio}</td>
               <td>{request.phone}</td>
+              <td>{request.email}</td>
               <td>{request.createdAt}</td>
             </tr>
           ))}
