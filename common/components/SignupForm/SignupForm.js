@@ -17,6 +17,9 @@ class SignupForm extends Component {
         <Field name="name" type="text" component={FormField} label="ФИО"/>
         <Field name="phone" component={FormField} label="Телефон"/>
         <Field name="email" component={FormField} label="email"/>
+        <div className={s.agreementCheck}>
+          <Field name="infoAgree" type="checkbox" component={FormField} label="Я согласен на обработку персональных данных"/>
+        </div>
         <div>
           <button className={s.signupButton} type="submit" disabled={submitting}>Отправить</button>
         </div>
@@ -29,7 +32,8 @@ const validate = values => {
   const requiredFields = [
     'name',
     'phone',
-    'email'
+    'email',
+    'infoAgree'
   ]
   const errors = {}
 
