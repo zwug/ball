@@ -40,6 +40,13 @@
   max-width: 500px;
 }
 
+.question {
+  font-weight: bold;
+  font-size: 19pt;
+  letter-spacing: 1px;
+  line-height: 21pt;
+}
+
 .contacts {
   position: relative;
   text-align: center;
