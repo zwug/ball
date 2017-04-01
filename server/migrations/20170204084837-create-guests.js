@@ -10,20 +10,20 @@ module.exports = {
       },
       'fio': {
         allowNull: false,
-        type: DataTypes.STRING
+        type: Sequelize.STRING
       },
       'email': {
         allowNull: false,
         primaryKey: true,
-        type: DataTypes.STRING
+        type: Sequelize.STRING
       },
       'phone': {
         allowNull: false,
-        type: DataTypes.STRING
+        type: Sequelize.STRING
       },
       'tickets_count': {
         allowNull: false,
-        type: DataTypes.INTEGER
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

@@ -4,42 +4,42 @@ module.exports = {
     return queryInterface.createTable('Users', {
       'fio': {
         allowNull: false,
-        type: DataTypes.STRING
+        type: Sequelize.STRING
       },
       'email': {
         allowNull: false,
         primaryKey: true,
-        type: DataTypes.STRING
+        type: Sequelize.STRING
       },
       'phone': {
         allowNull: false,
-        type: DataTypes.STRING
+        type: Sequelize.STRING
       },
-      'balls': DataTypes.TEXT,
+      'balls': Sequelize.TEXT,
       'birth_date': {
         allowNull: false,
-        type: DataTypes.DATEONLY,
+        type: Sequelize.DATEONLY,
       },
       'debut': {
         allowNull: false,
-        type: DataTypes.BOOLEAN
+        type: Sequelize.BOOLEAN
       },
       'has_partner': {
         allowNull: false,
-        type: DataTypes.BOOLEAN
+        type: Sequelize.BOOLEAN
       },
-      'partner': DataTypes.STRING,
+      'partner': Sequelize.STRING,
       'sex': {
         allowNull: false,
-        type: DataTypes.ENUM('male', 'female')
+        type: Sequelize.ENUM('male', 'female')
       },
       'level': {
         allowNull: false,
-        type: DataTypes.INTEGER
+        type: Sequelize.INTEGER
       },
       'vk': {
         allowNull: false,
-        type: DataTypes.STRING
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
