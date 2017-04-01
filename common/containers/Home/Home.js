@@ -107,7 +107,7 @@ class Home extends Component {
         </div>
         <div className={s.container}>
           <div>
-            <h1 className={s.infoHeading}>Репетиции, на которых вас всему научат, уже скоро начнутся! Успейте приобрести билет!</h1>
+            <h1 className={s.infoHeading}>Репетиции уже идут!</h1>
           </div>
           <div className={s.kremlinContainer}>
             <h1 className={s.kremlinHeading}>Бал в Измайловском кремле</h1>

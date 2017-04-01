@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import withStyles from 'isomorphic-style-loader/lib/withStyles'
 import s from './Panels.css'
+import PanelRehersals from './PanelRehersals'
 import PanelMembers from './PanelMembers'
 import PanelGuests from './PanelGuests'
 import PanelTickets from './PanelTickets'
@@ -12,6 +13,10 @@ import PanelVisagist from './PanelVisagist'
 import PanelContacts from './PanelContacts'
 
 const panelConfig = {
+  rehersals: {
+    label: 'Репетиции',
+    component: PanelRehersals
+  },
   members: {
     label: 'Участники',
     component: PanelMembers
@@ -54,7 +59,7 @@ class Panels extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      activePanel: panelConfig.tickets
+      activePanel: panelConfig.rehersals
     }
   }
 
