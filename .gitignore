@@ -2,3 +2,4 @@
 *.log
 /server/config/config.json
 /dist/
+.DS_Store

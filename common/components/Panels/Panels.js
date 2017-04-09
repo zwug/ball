@@ -33,10 +33,11 @@ const panelConfig = {
     label: 'Скидки',
     component: PanelDiscount
   },
-  debutants: {
-    label: 'Дебютанты',
-    component: PanelDebutants
-  },
+  // don't need it currently
+  // debutants: {
+  //   label: 'Дебютанты',
+  //   component: PanelDebutants
+  // },
   competition: {
     label: 'Король и Королева',
     component: PanelCompetition
