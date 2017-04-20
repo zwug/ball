@@ -11,11 +11,16 @@ import PanelCompetition from './PanelCompetition'
 import PanelPlace from './PanelPlace'
 import PanelVisagist from './PanelVisagist'
 import PanelContacts from './PanelContacts'
+import PanelExpress from './PanelExpress'
 
 const panelConfig = {
   rehersals: {
     label: 'Репетиции',
     component: PanelRehersals
+  },
+  express: {
+    label: 'Экспресс-подготовка',
+    component: PanelExpress
   },
   members: {
     label: 'Участники',
@@ -76,9 +81,9 @@ class Panels extends Component {
         <div className={s.controlsContainer}>
           {Object.keys(panelConfig).map((panelName, index) =>
             <div
-              className={panelConfig[panelName].label === this.state.activePanel.label
-                  ? s.activeControlItem
-                  : s.controlItem}
+              className={panelConfig[panelName].label === this.state.activePanel.label ?
+                  s.activeControlItem :
+                  s.controlItem}
               key={index}
               onClick={this.onControlClick.bind(this, panelName)}
             >

@@ -7,7 +7,7 @@ const PanelTickets = () => (
   <div>
     <h2>Билеты</h2>
     <p>
-      Стоимость билета участника: <span className={s.price}>8 900 руб.</span>
+      Стоимость билета участника: <span className={s.price}>3 100 руб.</span>
     </p>
     <p>
       Стоимость билета гостя: <span className={s.price}>750 руб.</span>
