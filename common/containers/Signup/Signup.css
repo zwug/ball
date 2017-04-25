@@ -89,6 +89,10 @@
   position: relative;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 @media (--xs-viewport) {
   .heading {
     font-size: 24px;
